@@ -135,8 +135,8 @@ ol {
 }
 
 .spad {
-	padding-top: 100px;
-	padding-bottom: 100px;
+	padding-top: 25px;
+	padding-bottom: 25px;
 }
 
 .spad-2 {
@@ -953,7 +953,7 @@ ol {
 -----------------------*/
 
 .breadcrumb-option {
-	padding-top: 55px;
+	padding-top: 25px;
 }
 
 .breadcrumb-option .bo-links a {
