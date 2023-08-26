@@ -2773,6 +2773,24 @@ ol {
 /* Small Device = 320px */
 
 @media only screen and (max-width: 479px) {
+	#social-links a {
+		display: inline-block;
+		margin: 0 8px;
+		color: #007bff;
+		text-decoration: none;
+		font-weight: bold;
+		padding: 0 !important;
+		font-size: 12px !important;
+	  }
+	  #social-links a img {
+		width: 18px !important;
+		height: 18px !important;
+		vertical-align: middle;
+		padding: 3px;
+	  }
+	  #popup{
+		width: 350px !important;
+	}
 	.load-more-btn a {
 		padding: 15px 70px 13px;
 	}

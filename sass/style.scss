@@ -194,7 +194,7 @@ ol {
 	height: 100%;
 	top: 0;
 	left: 0;
-	z-index: 999999;
+	z-index: 99;
 	background: #000;
 }
 
@@ -276,7 +276,7 @@ ol {
 	left: 0;
 	top: 0;
 	background: #000;
-	z-index: 99999;
+	z-index: 99;
 }
 
 .search-model-form {
@@ -2469,6 +2469,7 @@ ol {
 /* Wide Mobile = 480px */
 
 @media only screen and (max-width: 767px) {
+	
 	.about-pic .play-btn {
 		right: auto;
 		left: 50%;
@@ -2476,6 +2477,7 @@ ol {
 		-ms-transform: translate(-50px, -50px);
 		transform: translate(-50px, -50px);
 	}
+
 	.about-text {
 		padding-left: 30px;
 		padding-bottom: 70px;
