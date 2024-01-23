@@ -2927,18 +2927,18 @@ ol {
 }
 #scroll {
     position:fixed;
-    right:10px;
-    bottom:150px;
+    right:20px;
+    bottom:70px;
     cursor:pointer;
-    width:50px;
-    height:50px;
-	z-index: 9999999;
+    width:25px;
+    height:25px;
+	z-index: 999;
     background-color:#3498db;
     text-indent:-9999px;
     display:none;
-    -webkit-border-radius:60px;
-    -moz-border-radius:60px;
-    border-radius:60px
+    -webkit-border-radius:40px;
+    -moz-border-radius:40px;
+    border-radius:40px
 }
 #scroll span {
     position:absolute;
