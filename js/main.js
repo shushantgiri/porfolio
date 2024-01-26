@@ -153,57 +153,58 @@ $(document).ready(function(){
     }); 
 });
 
-$(document).ready(function () {
-    var hiddenColumn = $('#hidden-column');
-    var loadMoreBtn = $('#load-more-btn');
-    var backBtn = $('.back-btn');
+// $(document).ready(function () {
+//     var hiddenColumn = $('#hidden-column');
+//     var loadMoreBtn = $('#load-more-btn');
+//     var backBtn = $('.back-btn');
 
-    loadMoreBtn.click(function () {
-        // Show the hidden column with a smooth drop-down animation
-        hiddenColumn.slideDown();
+//     loadMoreBtn.click(function () {
+//         // Show the hidden column with a smooth drop-down animation
+//         hiddenColumn.slideDown();
 
-        // Hide load more button with custom animation
-        loadMoreBtn.animate({
-            opacity: 0,
-            width: 0
-        }, 500, function () {
-            $(this).hide();
-            
-            // Show back button after hiding the load more button
-            backBtn.show().animate({
-                opacity: 1,
-                width: '50%'
-            }, 500);
+//         // Hide load more button with custom animation
+//         loadMoreBtn.animate({
+//             opacity: 0.3,
+//             width: '40%'
+//         }, 500, function () {
+//             $(document).ready(function(){
+//                 $('#portfolio').removeClass('portfolio-filter').addClass('portfolio-filter1');
+//             })
+//             // // Show back button after hiding the load more button
+//             // backBtn.show().animate({
+//             //     opacity: 1,
+//             //     width: '50%'
+//             // }, 500);
 
 
-        });
+//         });
 
-        // Optionally, you can hide other elements if needed
-        // $('.pf-item').hide();
+//         // Optionally, you can hide other elements if needed
+//         // $('.pf-item').hide();
 
-        // You can customize the behavior for loading more images here
-    });
+//         // You can customize the behavior for loading more images here
+//     });
 
-    backBtn.click(function () {
-        // Hide the hidden column with a smooth slide-up animation
-        hiddenColumn.slideUp();
+//     backBtn.click(function () {
+//         // Hide the hidden column with a smooth slide-up animation
+//         hiddenColumn.slideUp();
 
-        // Hide back button with custom animation
-        backBtn.animate({
-            opacity: 0,
-            width: 0
-        }, 500, function () {
-            $(this).hide();
-            // Show load more button after hiding the back button
-            loadMoreBtn.show().animate({
-                opacity: 1,
-                width: '50%'
-            }, 500);
-        });
+//         // Hide back button with custom animation
+//         backBtn.animate({
+//             opacity: 0,
+//             width: 0
+//         }, 500, function () {
+//             $(this).hide();
+//             // Show load more button after hiding the back button
+//             loadMoreBtn.show().animate({
+//                 opacity: 1,
+//                 width: '50%'
+//             }, 500);
+//         });
 
-        // Optionally, you can show the previously hidden elements if needed
-        // $('.pf-item').show();
-    });
-});
+//         // Optionally, you can show the previously hidden elements if needed
+//         // $('.pf-item').show();
+//     });
+// });
 
 

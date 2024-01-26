@@ -697,6 +697,10 @@ ol {
 	height: 1530px !important;
 }
 
+.portfolio-filter1 {
+	height: 1900px !important;
+}
+
 .portfolio-filter .pf-item {
 	width: calc(20% - 20px);
 	height: 360px;

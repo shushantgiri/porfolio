@@ -502,8 +502,8 @@
                             </div>
                         </div>
 
-                        <div class="col-lg-3-0" id="hidden-column" style="display: none;"> <!-- Hidden column -->
-                            <div class="pf-item set-bg holi" data-setbg="img/holi1.jpg">
+                        <!-- <div class="col-lg-3-0" id="hidden-column" style="display: none;"> <!-- Hidden column -->
+                            <!-- <div class="pf-item set-bg holi" data-setbg="img/holi1.jpg">
                                 <a href="img/holi1.jpg" class="pf-icon image-popup"><span class="icon_plus"></span></a>
                                 <div class="pf-text">
                                     <h4>2079 Holi</h4>
@@ -514,17 +514,21 @@
                                 <a href="img/holi2.jpg" class="pf-icon image-popup"><span class="icon_plus"></span></a>
                                 <div class="pf-text">
                                     <h4>2079 Holi</h4>
-                                    <span>Shushant Photography</span>
-                                </div>
-                            </div>
-                            <div class="pf-item large-width set-bg temple" data-setbg="img/instragram1.jpeg" style="left: %;">
-                                <a href="img/instragram1.jpeg" class="pf-icon image-popup"><span
+                                    <span>Shushant Photography</span> -->
+                                <!-- </div> --> 
+                            <!-- </div> -->
+                            <!-- <div class="pf-item large-width set-bg temple" data-setbg="img/instragram1.jpeg" style="position: absolute;
+                            left: 900px !important;
+                            top: 1520px;">
+                                <a href="img/instragram1.jpeg" class="pf-icon image-popup" style="position: absolute;
+                                left: 900px !important;
+                                top: 1520px;"><span
                                         class="icon_plus"></span></a>
                                 <div class="pf-text">
                                     <h4>TEMPLE</h4>
                                     <span>Shushant Photography</span>
                                 </div>
-                            </div>
+                            </div> -->
                         </div>
                          </div>
                         </div>
@@ -533,10 +537,33 @@
                 <div class="load-more-btn">
                     <a  id="load-more-btn">Load More</a>
                 </div>
-                <div class="back-btn" style="display: none;">
+                <!-- Include SweetAlert CSS and JS -->
+<link rel="stylesheet" href="https://cdn.jsdelivr.net/npm/sweetalert2@11.0.18/dist/sweetalert2.min.css">
+<script src="https://cdn.jsdelivr.net/npm/sweetalert2@11.0.18/dist/sweetalert2.all.min.js"></script>
+
+<!-- Your JavaScript code -->
+<script>
+    // Wait for the document to be ready
+    document.addEventListener("DOMContentLoaded", function () {
+        // Find the "Load More" button by its ID
+        var loadMoreBtn = document.getElementById("load-more-btn");
+
+        // Add a click event listener to the button
+        loadMoreBtn.addEventListener("click", function () {
+            // Display the SweetAlert message
+            Swal.fire({
+                title: 'Coming Soon!',
+                text: 'More content will be available soon.',
+                icon: 'info',
+                confirmButtonText: 'OK'
+            });
+        });
+    });
+</script>
+                <!-- <div class="back-btn" style="display: none;">
                     <a class="back-btn">Back</a>
                 </div>
-                <script src="https://cdn.jsdelivr.net/npm/sweetalert2@10"></script>
+                <script src="https://cdn.jsdelivr.net/npm/sweetalert2@10"></script> -->
 
     </section>
     <!-- Portfolio Section End -->
