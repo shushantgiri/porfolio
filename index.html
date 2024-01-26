@@ -376,7 +376,7 @@
         </div>
         <div class="container-fluid">
             <div class="row">
-                <div class="col-lg-12 p-0">
+                <div id="portfolio" class="col-lg-12 p-0">
                     <div class="portfolio-filter">
                         <div class="pf-item set-bg holi" data-setbg="img/holi1.jpg">
                             <a href="img/holi1.jpg" class="pf-icon image-popup"><span class="icon_plus"></span></a>
@@ -479,8 +479,6 @@
                                 <span>Shushant Photography</span>
                             </div>
                         </div>
-
-
                         <div class="pf-item large-width set-bg natural" data-setbg="img/plant.jpeg">
                             <a href="img/plant.jpeg" class="pf-icon image-popup"><span class="icon_plus"></span></a>
                             <div class="pf-text">
@@ -503,16 +501,45 @@
                                 <span>Shushant Photography</span>
                             </div>
                         </div>
+
+                        <div class="col-lg-3-0" id="hidden-column" style="display: none;"> <!-- Hidden column -->
+                            <div class="pf-item set-bg holi" data-setbg="img/holi1.jpg">
+                                <a href="img/holi1.jpg" class="pf-icon image-popup"><span class="icon_plus"></span></a>
+                                <div class="pf-text">
+                                    <h4>2079 Holi</h4>
+                                    <span>Shushant Photography</span>
+                                </div>
+                            </div>
+                            <div class="pf-item large-width set-bg holi" data-setbg="img/holi2.jpg">
+                                <a href="img/holi2.jpg" class="pf-icon image-popup"><span class="icon_plus"></span></a>
+                                <div class="pf-text">
+                                    <h4>2079 Holi</h4>
+                                    <span>Shushant Photography</span>
+                                </div>
+                            </div>
+                            <div class="pf-item large-width set-bg temple" data-setbg="img/instragram1.jpeg" style="left: %;">
+                                <a href="img/instragram1.jpeg" class="pf-icon image-popup"><span
+                                        class="icon_plus"></span></a>
+                                <div class="pf-text">
+                                    <h4>TEMPLE</h4>
+                                    <span>Shushant Photography</span>
+                                </div>
+                            </div>
+                        </div>
                          </div>
                         </div>
                     </div>
                 </div>
                 <div class="load-more-btn">
-                    <a href="/load.html">Load More</a>
+                    <a  id="load-more-btn">Load More</a>
                 </div>
+                <div class="back-btn" style="display: none;">
+                    <a class="back-btn">Back</a>
+                </div>
+                <script src="https://cdn.jsdelivr.net/npm/sweetalert2@10"></script>
+
     </section>
     <!-- Portfolio Section End -->
-
     <!-- Footer Section Begin -->
     <footer class="footer-section">
         <div class="container">
