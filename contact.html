@@ -154,7 +154,7 @@
                             </div>
                             <div class="ct-text">
                                 <h5>Address</h5>
-                                <p>Mourighat,Dang,Nepal</p>
+                                <p>Dhobighat,Lalitpur Nepal</p>
                             </div>
                         </div>
                         <div class="ct-item">
@@ -175,7 +175,7 @@
                             </div>
                             <div class="ct-text">
                                 <h5>Email</h5>
-                                <p>shushantgiri98@gmail.com</p>
+                                <p>info@girisushant.com.np</p>
                             </div>
                         </div>
                     </div>
@@ -184,10 +184,19 @@
                     <div class="contact-form">
                         <h3>Work with Me!</h3>
                         <form action="javascript:;" onsubmit="submitData()" id="contact_form">
-                            <input type="text" placeholder="Full Name" name="name" required>
-                            <input type="text" placeholder="Email" name="email" required>
-                            <input type="text" placeholder="Phone Number" name="phone" required>
-                            <textarea placeholder="Message" name="message" required></textarea>
+                            <div>
+                                <input type="text" placeholder="Full Name" name="name" id="name" oninput="validateName()" required>
+                                <span id="nameError" class="error"></span>
+                            </div>
+                            <div>
+                                <input type="text" placeholder="Email" name="email" required>
+                            </div>
+                            <div>
+                                <input type="text" placeholder="Phone Number" name="phone" required>
+                            </div>
+                            <div>
+                                <textarea placeholder="Message" name="message" required></textarea>
+                            </div>
                             <button type="submit" class="site-btn">Submit</button>
                         </form>
                     </div>
@@ -195,35 +204,24 @@
             </div>
         </div>
     </section>
-    <!-- Contact Section End -->
+    <script src="https://cdn.jsdelivr.net/npm/sweetalert2@10"></script>
+
+    <!-- Your JavaScript code -->
     <script>
         function submitData() {
-            // Your form submission logic here
+            // Perform form submission logic here
+            // For demonstration purposes, let's assume the form is successfully submitted
     
-            // Assuming the form submission is successful
-            // You can replace this with your actual logic
-            const isSubmissionSuccessful = true;
-    
-            if (isSubmissionSuccessful) {
-                // Show SweetAlert success message
-                Swal.fire({
-                    icon: 'success',
-                    title: 'Submission Successful!',
-                    text: 'Thank you for reaching out. We will get back to you soon.',
-                    confirmButtonText: 'OK'
-                });
-    
-                // Optionally, you can reset the form after successful submission
-                document.getElementById('contact_form').reset();
-            } else {
-                // Show SweetAlert error message if the submission fails
-                Swal.fire({
-                    icon: 'error',
-                    title: 'Submission Failed',
-                    text: 'There was an error submitting the form. Please try again.',
-                    confirmButtonText: 'OK'
-                });
-            }
+            // Show SweetAlert message
+            Swal.fire({
+                icon: 'success',
+                title: 'Form Submitted!',
+                text: 'Thank you, your information has been successfully submitted. We will get in touch with you soon.',
+            });
+            
+            // You may want to prevent the form from submitting and refreshing the page
+            // You can do this by returning false in the onsubmit attribute
+            return false;
         }
     </script>
 
@@ -317,7 +315,7 @@
     <script src="js/jquery.slicknav.js"></script>
     <script src="js/owl.carousel.min.js"></script>
     <script src="js/main.js"></script>
-    <script>
+    <!-- <script>
         function submitData() {
             const form = document.getElementById('contact_form');
 
@@ -338,7 +336,7 @@
         }
             }
             
-    </script>
+    </script> -->
 </body>
 
 </html>
