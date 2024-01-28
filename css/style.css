@@ -693,14 +693,6 @@ ol {
 .filter-controls ul li:last-child:after {
 	display: none;
 }
-.portfolio-filter {
-	height: 1530px !important;
-}
-
-.portfolio-filter1 {
-	height: 1900px !important;
-}
-
 .portfolio-filter .pf-item {
 	width: calc(20% - 20px);
 	height: 360px;
@@ -2993,38 +2985,4 @@ ol {
     background-color:#e74c3c;
     opacity:1;filter:"alpha(opacity=100)";
     -ms-filter:"alpha(opacity=100)";
-}
-/* #hidden-column .pf-item {
-    height: 0;
-    overflow: hidden;
-    transition: height 0.2s ease; /* Optional: Add a smooth transition effect */
-}
-
-/* #hidden-column.show-photos .pf-item {
-    height: auto;
-} */ 
-
-#hidden-column {
-
-    /* Add transition property for smooth animation */
-    transition: all 0.5s ease;
-}
-
-.pf-item, #load-more-btn, .back-btn {
-    /* Add transition property for smooth animation */
-    transition: opacity 0.5s ease-in-out;
-}
-.video-container {
-	position: relative;
-	overflow: hidden;
-	padding-bottom: 56.25%; /* 16:9 aspect ratio */
-	width: 100px;
-}
-
-.video-container iframe {
-	position: absolute;
-	top: 0;
-	left: 0;
-	width: 100px;
-	height: 40px;
 }
