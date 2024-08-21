@@ -61,7 +61,7 @@ photographer famous,
 
     <link rel="canonical" href="https://girisushant.com.np/index.html">
 
-    <meta property="og:site_name" content="Sushant Photography">
+    <meta property="og:site_name" content="Shushant Photography">
     <meta property="og:title" content="Shushant | Photography">
     <meta property="og:url" content="https://girisushant.com.np">
     <meta property="og:type" content="website">
@@ -134,15 +134,15 @@ photographer famous,
       height: 100vh;
       background-color: #f0f0f0;
     } */
-        #popupbody {
+         /* Existing CSS */
+         #popupbody {
             margin: 0;
             padding: 0;
             display: flex;
             justify-content: center;
             align-items: center;
-            /* background-color: #f0f0f0; */
         }
-
+        
         #overlay {
             display: flex;
             position: fixed;
@@ -155,15 +155,15 @@ photographer famous,
             align-items: center;
             z-index: 1000;
         }
-
+        
         #popup {
-            background: linear-gradient(to top left, #33ccff 0%, #ff99cc 100%);
-            padding: 13px;
+            background-color: #f0f0f0;
+            padding: 10px;
             border-radius: 10px;
             position: relative;
             text-align: center;
         }
-
+        
         #close-button {
             position: absolute;
             top: 2px;
@@ -171,34 +171,52 @@ photographer famous,
             cursor: pointer;
             font-weight: bold;
             color: red;
+            background-color: #fff;
+            border-radius: 50%;
+            padding: 5px;
+            width: 20px;
+            height: 20px;
+            text-align: center;
+            line-height: 10px;
+            z-index: 1100; /* Ensure the close button is on top */
         }
-
+        
         #video {
             width: 100%;
             max-width: 700px;
             height: auto;
+            position: relative;
         }
-
-        #social-links {
-            margin-top: 5px;
-        }
-
-        #social-links a {
-            display: inline-block;
-            margin: 0 5px;
-            color: #007bff;
+        
+        #follow-button {
+            position: absolute;
+            top: 50%;
+            left: 50%;
+            transform: translate(-50%, -50%);
+            background-color: #E1306C;
+            color: white;
+            padding: 10px 20px;
+            border: none;
+            border-radius: 5px;
+            font-size: 16px;
+            margin-top: 100px;
             text-decoration: none;
-            font-weight: bold;
-            font-size: 12px;
-            padding: 5px;
+            opacity: 0; /* Initially hidden */
+            pointer-events: auto; /* Still clickable */
+            cursor: pointer; /* Show pointer cursor */
+            transition: opacity 0.3s ease;
         }
-
-        #social-links a img {
-            width: 20px;
-            height: 20px;
-            vertical-align: middle;
-            padding: 3px;
+        
+        /* Ensure follow button is clickable even when hidden */
+        #popup:hover #follow-button {
+            opacity: 0; /* Remain hidden on hover */
+            pointer-events: auto; /* Ensure it's still clickable */
         }
+        
+        body.no-scroll {
+            overflow: hidden;
+        }
+        
     </style>
 </head>
 
@@ -277,11 +295,7 @@ photographer famous,
                         <div class="col-lg-12">
                             <div class="hs-text">
                                 <h2>Shushant Photography</h2>
-                                <p> I am a professional photographer and digital
-                                    artist and technology enthusiast. </br> I particularly specialise in fine-art
-                                    contemporary landscape and portrait
-                                    photography, and I love shooting and creating images with a
-                                    "fairy tale" feel.</p>
+                                <p>I’m a photographer and UI/UX designer with a love for technology. I create fine-artphotos with a fairy-tale<br> feel and design user-friendly digital experiences that are both engaging and functional.</p>
                                 <!-- <a href="/contact.html" class="primary-btn">Contact Me</a> -->
                                 <a href="/about.html" class="primary-btn">About Me</a>
                             </div>
@@ -310,9 +324,7 @@ photographer famous,
                     <div class="services-item">
                         <img src="img/dharara.jpg" alt="">
                         <h3>Dharahara</h3>
-                        <p>Dharahara, is a 72-metre-tall tower at the centre of Sundhara, Kathmandu, Nepal. It was first
-                            built in 1832 by Mukhtiyar Bhimsen Thapa under the commission of Queen Lalit Tripurasundari
-                            and was a part of the architecture of Kathmandu recognized by UNESCO.</p>
+                        <p>Dharahara is a 72-meter-tall tower in Sundhara, Kathmandu, built in 1832 by Mukhtiyar Bhimsen Thapa under Queen Lalit Tripurasundari. It was a UNESCO-recognized landmark.</p>
                     </div>
                 </div>
                 <div class="col-lg-4 col-md-6 col-sm-6">
@@ -590,22 +602,36 @@ photographer famous,
 
 <!-- Your JavaScript code -->
 <script>
-    // Wait for the document to be ready
-    document.addEventListener("DOMContentLoaded", function () {
-        // Find the "Load More" button by its ID
-        var loadMoreBtn = document.getElementById("load-more-btn");
+  // Wait for the document to be ready
+document.addEventListener("DOMContentLoaded", function () {
+    // Find the "Load More" button by its ID
+    var loadMoreBtn = document.getElementById("load-more-btn");
 
-        // Add a click event listener to the button
-        loadMoreBtn.addEventListener("click", function () {
-            // Display the SweetAlert message
-            Swal.fire({
-                title: 'Coming Soon!',
-                text: 'More content will be available soon.',
-                icon: 'info',
-                confirmButtonText: 'OK'
-            });
+    // Add a click event listener to the button
+    loadMoreBtn.addEventListener("click", function () {
+        // Display the SweetAlert message
+        Swal.fire({
+            title: 'Explore My Photography!',
+            text: 'Click below to view all my photos on Instagram.',
+            icon: 'info',
+            confirmButtonText: 'OK',
+            showCancelButton: true,
+            cancelButtonText: 'Visit Instagram',
+            customClass: {
+                title: 'swal-title',
+                popup: 'swal-popup',
+                confirmButton: 'swal-confirm-button',
+                cancelButton: 'swal-cancel-button'
+            }
+        }).then((result) => {
+            if (result.dismiss === Swal.DismissReason.cancel) {
+                // Redirect to Instagram if the cancel button is clicked
+                window.open('https://www.instagram.com/shushant.giri/', '_blank');
+            }
         });
     });
+});
+
 </script>
                 <!-- <div class="back-btn" style="display: none;">
                     <a class="back-btn">Back</a>
@@ -621,7 +647,7 @@ photographer famous,
                 <div class="col-lg-3 col-md-6 col-sm-6">
                     <div class="fs-widget">
                         <h5>About Me</h5>
-                        <p>Hey! I'm Shushant Photography, cruising through 12th grade while juggling the worlds of photography and web development. For two years, I've been freezing moments in Kathmandu's vibrant tapestry. From classrooms to coding, my lens captures the beauty of both. Dive into my visual journey, where studies and snapshots collide in awesome harmony!.</p>
+                        <p>Hi! I'm Shushant, a 18-year-old UI/UX designer, photographer, and web developer. For the past three years, I've been taking photos around Kathmandu and working on design and coding. Explore my world where creativity and technology come together!</p>
 
                     </div>
                 </div>
@@ -739,19 +765,16 @@ photographer famous,
     <div id="popupbody">
         <div id="overlay">
             <div id="popup">
-                <div id="close-button" onclick="closePopup()">X</div>
+                <span id="close-button">&times;</span> <!-- Close button -->
                 <video id="video" autoplay loop muted>
                     <source src="img/Black and White Minimalist Simple Hand drawn Animated Scrapbook Subscribe YouTube Intro (1).mp4" type="video/mp4">
                     Your browser does not support the video tag.
                 </video>
+                <a id="follow-button" href="https://www.instagram.com/shushant.giri/" target="_blank">Follow</a>
             </div>
-            <!-- <div id="social-links" style="position:absolute; top: 530px; right: 450px; display:flex;">
-                <a href="https://www.facebook.com/shushant.giri.167/"><img src="img/facebook.png" width="20px"
-                        alt="Facebook">Facebook</a>
-                <a href="https://github.com/shushantgiri"><img src="img/github.png" alt="Twitter">Github</a>
-                <a href="https://www.instagram.com/shushant.giri/"><img src="img/insta.png" alt="Instagram">Instagram</a>
-            </div> -->
         </div>
+    </div>
+    
        
     </div>
     </div>
@@ -759,31 +782,84 @@ photographer famous,
         document.addEventListener("DOMContentLoaded", function () {
             const overlay = document.getElementById("overlay");
             const video = document.getElementById("video");
-
-            // Show the overlay on page load
+            const closeButton = document.getElementById("close-button");
+            const followButton = document.getElementById("follow-button");
+    
+            // Show the overlay on page load and prevent background scrolling
             overlay.style.display = "flex";
-
-            // Hide the overlay when the video ends
+            document.body.classList.add("no-scroll");
+    
+            // Hide the overlay and allow scrolling when the video ends
             video.addEventListener("ended", function () {
                 closePopup();
             });
-
-            // Close the overlay when clicking outside of the popup
+    
+            // Close the overlay and allow scrolling when clicking the close button
+            closeButton.addEventListener("click", function () {
+                closePopup();
+            });
+    
+            // Close the overlay and allow scrolling when clicking outside of the popup
             overlay.addEventListener("click", function (event) {
                 if (event.target === overlay) {
                     closePopup();
                 }
             });
+    
+            // Redirect to Instagram when the follow button is clicked
+            followButton.addEventListener("click", function () {
+                window.open("https://www.instagram.com/shushant.giri/", "_blank");
+            });
         });
-
+    
         function closePopup() {
             const overlay = document.getElementById("overlay");
             overlay.style.display = "none";
+            document.body.classList.remove("no-scroll");
         }
-
     </script>
+    
+    
     <!-- popup animation end  -->
 
+    <!-- up to top button start -->
+    <script>
+        document.addEventListener("DOMContentLoaded", function () {
+            const scrollButton = document.getElementById("scroll");
+
+            // Show the button when scrolling down
+            window.addEventListener("scroll", function () {
+                if (window.scrollY > 200) { // Adjust the scroll threshold as needed
+                    scrollButton.style.display = "block";
+                } else {
+                    scrollButton.style.display = "none";
+                }
+            });
+
+            // Handle button click
+            scrollButton.addEventListener("click", function (event) {
+                event.preventDefault();
+                smoothScrollToBottom();
+                setTimeout(smoothScrollToTop, 600); // Adjust the time delay for the scroll up
+            });
+
+            // Smooth scroll to the bottom
+            function smoothScrollToBottom() {
+                window.scrollTo({
+                    top: document.body.scrollHeight,
+                    behavior: "smooth"
+                });
+            }
+
+            // Smooth scroll to the top
+            function smoothScrollToTop() {
+                window.scrollTo({
+                    top: 0,
+                    behavior: "smooth"
+                });
+            }
+        });
+    </script>
     <!-- Js Plugins -->
     <script src="js/jquery-3.3.1.min.js"></script>
     <script src="js/bootstrap.min.js"></script>
