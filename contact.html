@@ -160,30 +160,43 @@
                         </div>
                         <div class="ct-item">
                             <div class="ct-icon">
-                                <i class="fa fa-mobile"></i>
+                                <a href="tel:9810958014" style="text-decoration: none; color: inherit;">
+                                    <i class="fa fa-mobile"></i>
+                                </a>
                             </div>
                             <div class="ct-text">
                                 <h5>Phone</h5>
                                 <ul>
-                                    <li>9810958014</li>
-                                    <li>9765354243</li>
+                                    <li><a href="tel:9810958014" style="text-decoration: none; color: inherit;">9810958014</a></li>
+                                    <li><a href="tel:9765354243" style="text-decoration: none; color: inherit;">9765354243</a></li>
                                 </ul>
                             </div>
                         </div>
+                        
                         <div class="ct-item">
-                            <div class="ct-icon">
+                            <div class="ct-icon" id="email-icon" style="cursor: pointer;">
                                 <i class="fa fa-envelope"></i>
                             </div>
                             <div class="ct-text">
                                 <h5>Email</h5>
-                                <p>info@girisushant.com.np</p>
+                                <p id="email-link" style="cursor: pointer;">info@girisushant.com.np</p>
                             </div>
                         </div>
+                        
+                        <script>
+                            function redirectToMail() {
+                                window.location.href = 'mailto:info@girisushant.com.np';
+                            }
+                        
+                            document.getElementById('email-link').addEventListener('click', redirectToMail);
+                            document.getElementById('email-icon').addEventListener('click', redirectToMail);
+                        </script>
+                        
                     </div>
                 </div>
                 <div class="col-lg-6 col-md-6">
                     <div class="contact-form">
-                        <h3>Work with Me!</h3>
+                        <h3>Let's Collaborate!</h3>
                         <form action="javascript:;" onsubmit="submitData()" id="contact_form">
                             <div>
                                 <input type="text" placeholder="Full Name" name="name" id="name" oninput="validateName()" required>
