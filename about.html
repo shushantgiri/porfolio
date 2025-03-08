@@ -132,55 +132,15 @@
                 </div>
                 <div class="col-lg-6 p-0">
                     <div class="about-text">
-                        <div class="section-title">
+                        <div class="section-title"> 
                             <h2>The Story of My Growth</h2>
                             <p>
                                 Hey, I'm <strong>Shushant Giri</strong>, the person behind Shushant Photography. I'm 18 years old, living in Lalitpur, originally from Dang Deukhuri. Let me share a bit about my journey. Life has been a mix of adventures, starting with making gaming videos in 7th grade and then trying out blogging after finishing 10th grade. Each experience has shaped my story, and I'm excited to tell you more about it.
                                 The journey has had its challenges, including the ups and downs of gaming videos and blogging. However, these experiences taught me a lot and made me determined to keep going. For the last two years, I've been deeply passionate about photography. Learning and improving my skills has been incredibly enjoyable, and I've developed a strong passion for capturing memorable moments.
                                 At the same time, I've been exploring coding—learning HTML, CSS, and JavaScript. I even created my own website! After completing my 12th-grade exams, I used that free time to learn UI/UX design. Now, I'm a designer as well and focus on user experience design. It's been a bit tricky but also really rewarding.
-                                A big thanks to my support system, especially my Mama, <strong> Madhav Prasad Belbase </strong> . His guidance has been invaluable on this journey. Thank you for reading about my journey! Your support means a lot to me, and I'm excited to share more of my story with you in the future!
-                                                        
-                                
-                        
+                                A big thanks to my support system, especially my Mama, <strong> Madhav Prasad Belbase </strong> . His guidance has been invaluable on this journey. Thank you for reading about my journey! Your support means a lot to me, and I'm excited to share more of my story with you in the future!    
                             </p>
-                        
                         </div>
-                         <!-- <div class="video-container">  -->
-                            <!-- Replace 'VIDEO_ID' with your YouTube video ID -->
-                             <!-- <iframe src="https://www.youtube.com/embed/VIDEO_ID" frameborder="0" allowfullscreen></iframe> -->
-                        <!-- </div> -->
-                        <!-- <div class="at-list">
-                            <div class="al-item">
-                                <div class="al-pic">
-                                    <img src="img/about/list-1.png" alt="">
-                                </div>
-                                <div class="al-text">
-                                    <h5>Professionalism</h5>
-                                    <p>Lorem ipsum dolor sit amet, consectetur adipiscing elit, sed do eiusmod tempor
-                                        incididunt ut labore et dolore magna aliqua. Quis ipsum suspendisse ultrices
-                                        gravida.</p>
-                                </div>
-                            </div> -->
-                            <!-- <div class="al-item">
-                                <div class="al-pic">
-                                    <img src="img/about/list-2.png" alt="">
-                                </div>
-                                <div class="al-text">
-                                    <h5>Individual approach</h5>
-                                    <p> 18-year-old photographer like My self, can use their unique perspective as a young person to capture struggle in a way that is fresh and insightful. By approaching their subjects with empathy and an open mind, they can create images that offer a new perspective on the struggles that people face.</p>
-                                </div>
-                            </div> -->
-                                <!-- <div class="al-item">
-                                    <div class="al-pic">
-                                        <img src="img/about/list-3.png" alt="">
-                                    </div>
-                                    <div class="al-text">
-                                        <h5>Flexible Schedule</h5>
-                                        <p>Lorem ipsum dolor sit amet, consectetur adipiscing elit, sed do eiusmod tempor
-                                            incididunt ut labore et dolore magna aliqua. Quis ipsum suspendisse ultrices
-                                            gravida.</p>
-                                    </div>
-                                </div> -->
                             <div class="al-item">
                                 <div class="al-pic">
                                     <img src="img/about/list-4.png" alt="">
@@ -198,7 +158,24 @@
         </div>
     </section>
     <!-- About Section End -->
-
+    <script>
+        window.onload = function() {
+            // Check if the screen width is small (mobile view)
+            if (window.innerWidth <= 768) {
+                // Give it a moment to ensure everything is fully loaded
+                setTimeout(function() {
+                    var element = document.getElementById("about-section");
+                    if (element) {
+                        // Automatically scroll to the element with smooth behavior
+                        element.scrollIntoView({
+                            behavior: "smooth", // Smooth scroll effect
+                            block: "start" // Align at the top of the viewport
+                        });
+                    }
+                }, 500); // Delay of 500ms
+            }
+        };
+    </script>    
     <!-- Team Section Begin -->
     <section class="team-section spad">
         <div class="container">
