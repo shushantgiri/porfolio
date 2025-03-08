@@ -581,13 +581,111 @@ document.addEventListener("DOMContentLoaded", function () {
             }
         });
     });
-});
-
+})
 </script>
-                <!-- <div class="back-btn" style="display: none;">
-                    <a class="back-btn">Back</a>
-                </div>
-                <script src="https://cdn.jsdelivr.net/npm/sweetalert2@10"></script> -->
+
+
+<div class="share-btn" id="share-btn">
+    <i class="fa fa-share-alt"></i>
+</div>
+
+<div class="social-icons" id="social-icons">
+    <a href="https://www.facebook.com/girishushant" target="_blank" class="social-icon"><i class="fab fa-facebook-f"></i></a>
+    <a href="https://x.com/girishushant" target="_blank" class="social-icon"><i class="fab fa-twitter"></i></a>
+    <a href="https://instagram.com/shushant.giri" target="_blank" class="social-icon"><i class="fab fa-instagram"></i></a>
+    <a href="https://www.linkedin.com/shushantgiri" target="_blank" class="social-icon"><i class="fab fa-linkedin-in"></i></a>
+</div>
+
+<!-- Include Font Awesome for social media icons -->
+<script src="https://cdnjs.cloudflare.com/ajax/libs/font-awesome/6.0.0-beta3/js/all.min.js"></script>
+
+<style>
+    /* Share Button (Smaller Square Shape) */
+    .share-btn {
+        position: fixed;
+        right: 0px;
+        bottom: 50%;
+        background-color: #3498db;
+        color: white;
+        padding: 10px;
+        border-radius: 10px;
+        cursor: pointer;
+        box-shadow: 0px 4px 8px rgba(0, 0, 0, 0.3);
+        font-size: 16px;
+        z-index: 100;
+        transition: right 0.5s ease-in-out; /* Slide effect */
+    }
+
+    /* Social Media Icons Container */
+    .social-icons {
+        position: fixed;
+        right: -100px; /* Initially hidden behind share button */
+        bottom: 39%; /* Positioned right below the share button */
+        display: flex;
+        flex-direction: column;
+        align-items: center;
+        width: 50px; /* Smaller square container width */
+        height: auto;
+        padding: 10px;
+        transition: right 0.5s ease-in-out; /* Smooth slide */
+        z-index: 99;
+    }
+
+    /* Social Media Icons */
+    .social-icon {
+    margin: 3px;
+    background-color: #3498db; /* Default white background */
+    color: white; /* Default icon color */
+    font-size: 14px; /* Smaller font size */
+    padding: 10px; /* Smaller padding */
+    border-radius: 10px; /* Make it rounded */
+    transition: transform 0.3s ease, background-color 0.3s ease, color 0.3s ease;
+    box-shadow: 0px 4px 8px rgba(0, 0, 0, 0.1); /* Added shadow */
+}
+
+
+    /* Hover effect for social icons */
+    .social-icon:hover {
+        transform: scale(1.1); /* Slightly enlarge the icon */
+    }
+
+    /* Hover effect for background and icon together */
+    .social-icon:hover {
+        background-color: #FFFAFA; /* Change the background to social media color */
+        color: #3498db; /* Change the icon color to white */
+    }
+
+    /* Prevent hover effect when the icon is clicked */
+    .social-icon:active {
+        background-color: #3498db; /* Keep the background when clicked */
+        color: white; /* Keep the icon color white */
+    }
+
+    /* Show social icons and share button when clicked */
+    .social-icons.show {
+        right: 0px; /* Move icons to the right, attached to the share button */
+    }
+
+    .share-btn.show {
+        right: 50px; /* Move the share button alongside social icons */
+    }
+    .social-icon:active {
+    background-color: #3498db; /* Keep the background when clicked */
+    color: white; /* Keep the icon color white */
+}
+</style>
+
+<script>
+    document.getElementById("share-btn").addEventListener("click", function() {
+        var socialIcons = document.getElementById("social-icons");
+        var shareButton = document.getElementById("share-btn");
+
+        socialIcons.classList.toggle("show");
+        shareButton.classList.toggle("show");
+    });
+</script>
+
+
 
     </section>
     <!-- Portfolio Section End -->
@@ -622,34 +720,33 @@ document.addEventListener("DOMContentLoaded", function () {
                             <li><a href="/index.html">Home</a></li>
                             <!-- <li><a href="/about.html">About</a></li> -->
                             <li><a href="/contact.html">Contact</a></li>
-                            <li><a href="/about.html">About</a></li>
-                            <li><a href="https://designer.girisushant.com.np/" target="_blank">UI/UX Design</a></li>
-
-                            
+                            <li><a href="/about.html">About</a></li>                      
 
                         </ul>
-                        <!-- <ul>
-                            <li><a href="/gallery.html">Gallery</a></li>
+                        <ul>
+                            <li><a href="https://designer.girisushant.com.np/" target="_blank">Design Works</a></li>
                             <li><a href="#">Portfolio</a></li>
                             <li><a href="/services.html">Services</a></li>
-                        </ul> -->
+                        </ul>
                     </div>
                 </div>
                 <div class="col-lg-3 col-md-6 col-sm-6">
                     <div class="fs-widget">
-                        <h5>Follow Me</h5>
-                        <!-- <p>Imolor amet consectetur adipiscing elit, sed do eiusmod tempor incididunt.</p> -->
-                        <div class="fa-social">
-                            <a href="https://www.facebook.com/shushant.giri.167" class="pr-4" target="_blank"><i
-                                    class="fa fa-facebook "></i></a>
-                            <!-- <a href="#"><i class="fa fa-twitter"></i></a> -->
-                            <a href="https://www.youtube.com/channel/UCN3y-i9Jq4_4jhVe8ixb7yA?sub_confirmation=1"
-                                class="pr-4" target="_blank"><i class="fa fa-youtube-play"></i></a>
-                            <a href="https://www.instagram.com/shushant.giri/?next=%2F" class="pr-4" target="_blank"><i
-                                    class="fa fa-instagram"></i></a>
+                        <h5>Have a question?</h5>
+                        <div class="contact-info">
+                            <p><i class="fa fa-map-marker"></i> Location: Kathmandu, Nepal</p>
+                            <p><i class="fa fa-phone"></i> Phone: +977 9810958014</p>
+                            <p><i class="fa fa-envelope"></i> Email: info@girisushant.com.np</p>
                         </div>
                     </div>
                 </div>
+                <style>
+                    .fs-widget {
+                    padding: 15px; /* Reduced padding for a more compact look */
+                    
+                }
+                </style>
+                
                 <div class="col-lg-12">
                     <div class="copyright-text">
                         <p>
