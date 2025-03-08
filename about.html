@@ -49,6 +49,7 @@
     <!-- Google Font -->
     <link href="https://fonts.googleapis.com/css?family=Quantico:400,700&display=swap" rel="stylesheet">
     <link href="https://fonts.googleapis.com/css?family=Open+Sans:400,600,700&display=swap" rel="stylesheet">
+    
 
     <!-- Css Styles -->
     <link rel="stylesheet" href="css/bootstrap.min.css" type="text/css">
@@ -384,74 +385,97 @@
         </div>
     </section> -->
     <!-- Testimonial Section End -->
+    <div class="share-btn" id="share-btn">
+        <i class="fa fa-share-alt"></i>
+    </div>
+    
+    <div class="social-icons" id="social-icons">
+        <a href="https://www.facebook.com/girishushant" target="_blank" class="social-icon"><i class="fa fa-facebook"></i></a>
+        <a href="https://x.com/girishushant" target="_blank" class="social-icon"><i class="fa fa-twitter"></i></a>
+        <a href="https://instagram.com/shushant.giri" target="_blank" class="social-icon"><i class="fa fa-instagram"></i></a>
+        <a href="https://www.linkedin.com/shushantgiri" target="_blank" class="social-icon"><i class="fa fa-linkedin"></i></a>
+    </div>
+    
+    
+    <script>
+        document.getElementById("share-btn").addEventListener("click", function() {
+            var socialIcons = document.getElementById("social-icons");
+            var shareButton = document.getElementById("share-btn");
+    
+            socialIcons.classList.toggle("show");
+            shareButton.classList.toggle("show");
+        });
+    </script>
 
-    <!-- Footer Section Begin -->
-    <footer class="footer-section">
-        <div class="container">
-            <div class="row">
-                <div class="col-lg-3 col-md-6 col-sm-6">
-                    <div class="fs-widget">
-                        <h5>About Me</h5>
-                        <p>Hi! I'm Shushant, a 18-year-old UI/UX designer, photographer, and web developer. For the past three years, I've been taking photos around Kathmandu and working on design and coding. Explore my world where creativity and technology come together!</p>
+       <!-- Footer Section Begin -->
+   <footer class="footer-section">
+    <div class="container">
+        <div class="row">
+            <div class="col-lg-3 col-md-6 col-sm-6">
+                <div class="fs-widget">
+                    <h5>About Me</h5>
+                    <p>Hi! I'm Shushant, a 18-year-old UI/UX designer, photographer, and web developer. For the past three years, I've been taking photos around Kathmandu and working on design and coding. Explore my world where creativity and technology come together!</p>
 
-                    </div>
                 </div>
-                <div class="col-lg-3 col-md-6 col-sm-6">
-                    <div class="fs-widget">
-                        <h5>Instagram</h5>
-                        <div class="fw-instagram">
-                           <a href="https://www.instagram.com/shushant.giri/"><img src="img/instragram1.jpeg" alt="" class="img"> </a>
-                           <a href="https://www.instagram.com/shushant.giri/"> <img src="img/instragram2.jpeg" alt="" class="img"> </a>
-                           <a href="https://www.instagram.com/shushant.giri/"> <img src="img/instragram3.jpg" alt="" class="img"></a>
-                        </div>
-                    </div>
-                </div>
-                <div class="col-lg-3 col-md-6 col-sm-6">
-                    <div class="fs-widget">
-                        <h5>Quick links</h5>
-                        <ul>
-                            <li><a href="/index.html">Home</a></li>
-                            <!-- <li><a href="/about.html">About</a></li> -->
-                            <li><a href="/contact.html">Contact</a></li>
-                        
-                        </ul>
-                        <!-- <ul>
-                            <li><a href="/gallery.html">Gallery</a></li>
-                            <li><a href="#">Portfolio</a></li>
-                            <li><a href="/services.html">Services</a></li>
-                        </ul> -->
-                    </div>
-                </div>
-                <div class="col-lg-3 col-md-6 col-sm-6">
-                    <div class="fs-widget">
-                        <h5>Follow Me</h5>
-                        <!-- <p>Imolor amet consectetur adipiscing elit, sed do eiusmod tempor incididunt.</p> -->
-                        <div class="fa-social">
-                            <a href="https://www.facebook.com/shushant.giri.167" class="pr-4" target="_blank"><i
-                                    class="fa fa-facebook "></i></a>
-                            <!-- <a href="#"><i class="fa fa-twitter"></i></a> -->
-                            <a href="https://www.youtube.com/channel/UCN3y-i9Jq4_4jhVe8ixb7yA?sub_confirmation=1"
-                                class="pr-4" target="_blank"><i class="fa fa-youtube-play"></i></a>
-                            <a href="https://www.instagram.com/shushant.giri/?next=%2F" class="pr-4" target="_blank"><i
-                                    class="fa fa-instagram"></i></a>
-                        </div>
-                    </div>
-                </div>
-                <div class="col-lg-12">
-                    <div class="copyright-text">
-                        <p>
-                            <!-- Link back to Colorlib can't be removed. Template is licensed under CC BY 3.0. -->
-                            Copyright &copy;
-                            <script>document.write(new Date().getFullYear());</script> All rights reserved |<a href="">Shushant
-                            Photography</a>
-                            <!-- Link back to Colorlib can't be removed. Template is licensed under CC BY 3.0. -->
-                        </p>
+            </div>
+            <div class="col-lg-3 col-md-6 col-sm-6">
+                <div class="fs-widget">
+                    <h5>Instagram</h5>
+                    <div class="fw-instagram">
+                        <a href="https://www.instagram.com/shushant.giri/"><img src="img/instragram1.jpeg" alt=""
+                                class="img"> </a>
+                        <a href="https://www.instagram.com/shushant.giri/"> <img src="img/instragram2.jpeg" alt=""
+                                class="img"> </a>
+                        <a href="https://www.instagram.com/shushant.giri/"> <img src="img/instragram3.jpg" alt=""
+                                class="img"></a>
                     </div>
                 </div>
             </div>
+            <div class="col-lg-3 col-md-6 col-sm-6">
+                <div class="fs-widget">
+                    <h5>Quick links</h5>
+                    <ul>
+                        <li><a href="/index.html">Home</a></li>
+                        <!-- <li><a href="/about.html">About</a></li> -->
+                        <li><a href="/contact.html">Contact</a></li>
+                        <li><a href="/about.html">About</a></li>                      
+
+                    </ul>
+                    <ul>
+                        <li><a href="https://designer.girisushant.com.np/" target="_blank">Design Works</a></li>
+                        <li><a href="#">Portfolio</a></li>
+                        <li><a href="/services.html">Services</a></li>
+                    </ul>
+                </div>
+            </div>
+            <div class="col-lg-3 col-md-6 col-sm-6">
+                <div class="fs-widget">
+                    <h5>Have a question?</h5>
+                    <div class="contact-info">
+                        <p><i class="fa fa-map-marker"></i>  Kathmandu, Nepal</p>
+                        <p><i class="fa fa-phone"></i> +977 9810958014</p>
+                        <p><i class="fa fa-envelope"></i>  info@girisushant.com.np</p>
+                    </div>
+                </div>
+            </div>
+
+            
+            <div class="col-lg-12">
+                <div class="copyright-text">
+                    <p>
+                        <!-- Link back to Colorlib can't be removed. Template is licensed under CC BY 3.0. -->
+                        Copyright &copy;
+                        <script>document.write(new Date().getFullYear());</script> All rights reserved |<a
+                            href="">Shushant
+                            Photography</a>
+                        <!-- Link back to Colorlib can't be removed. Template is licensed under CC BY 3.0. -->
+                    </p>
+                </div>
+            </div>
         </div>
-    </footer>
-    <!-- Footer Section End -->
+    </div>
+</footer>
+<!-- Footer Section End -->
 
     <!-- Search model Begin -->
     <div class="search-model">

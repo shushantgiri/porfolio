@@ -2990,4 +2990,81 @@ ol {
 	filter: alpha(opacity=100);
 	-ms-filter: alpha(opacity=100);
 }
+.share-btn {
+	position: fixed;
+	right: 0px;
+	bottom: 50%;
+	background-color: #3498db;
+	color: white;
+	padding: 10px;
+	border-radius: 10px;
+	cursor: pointer;
+	box-shadow: 0px 4px 8px rgba(0, 0, 0, 0.3);
+	font-size: 16px;
+	z-index: 100;
+	transition: right 0.5s ease-in-out; /* Slide effect */
+}
 
+/* Social Media Icons Container */
+.social-icons {
+	position: fixed;
+	right: -100px; /* Initially hidden behind share button */
+	bottom: 39%; /* Positioned right below the share button */
+	display: flex;
+	flex-direction: column;
+	align-items: center;
+	width: 50px; /* Smaller square container width */
+	height: auto;
+	padding: 10px;
+	transition: right 0.5s ease-in-out; /* Smooth slide */
+	z-index: 99;
+}
+
+/* Social Media Icons */
+.social-icon {
+	margin: 3px;
+	background-color: #3498db; /* Default white background */
+	color: white; /* Default icon color */
+	font-size: 14px; /* Smaller font size */
+	padding: 10px; /* Smaller padding */
+	border-radius: 10px; /* Make it rounded */
+	transition: transform 0.3s ease, background-color 0.3s ease, color 0.3s ease;
+	box-shadow: 0px 4px 8px rgba(0, 0, 0, 0.1); /* Added shadow */
+}
+
+/* Hover effect for social icons */
+.social-icon:hover {
+	transform: scale(1.1); /* Slightly enlarge the icon */
+}
+
+/* Hover effect for background and icon together */
+.social-icon:hover {
+	background-color: #FFFAFA; /* Change the background to social media color */
+	color: #3498db; /* Change the icon color to white */
+}
+
+/* Prevent hover effect when the icon is clicked */
+.social-icon:active {
+	background-color: #3498db; /* Keep the background when clicked */
+	color: white; /* Keep the icon color white */
+}
+
+/* Show social icons and share button when clicked */
+.social-icons.show {
+	right: 0px; /* Move icons to the right, attached to the share button */
+}
+
+.share-btn.show {
+	right: 50px; /* Move the share button alongside social icons */
+}
+
+/* Hide share button and social icons on small screens (mobile view) */
+@media screen and (max-width: 768px) {
+	.share-btn, .social-icons {
+		display: none; /* Hide on mobile screens */
+	}
+}
+.fs-widget {
+	padding: 15px; /* Reduced padding for a more compact look */
+	
+}
