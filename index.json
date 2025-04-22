@@ -1,15 +1,23 @@
 {
-    "@context": "https://schema.org",
-    "@type": "LocalBusiness",
-    "name": "Shushant Giri Photography",
-    "address": {
-      "@type": "PostalAddress",
-      "streetAddress": "Jhamsikhel",
-      "addressLocality": "Lalitpur",
-      "postalCode": "44700",
-      "addressCountry": "Nepal"
-    },
-    "telephone": "+977-9810958014",
-    "url": "http://girisushant.com.np"
+  "@context": "https://schema.org",
+  "@type": "Person",
+  "name": "Shushant Giri",
+  "url": "https://girisushant.com.np",
+  "sameAs": [
+    "https://www.instagram.com/shushantgiri",
+    "https://www.linkedin.com/in/shushantgiri"
+  ],
+  "jobTitle": "UI/UX Designer & Photographer",
+  "worksFor": {
+    "@type": "Organization",
+    "name": "Freelance"
+  },
+  "email": "mailto:info@girisushant.com.np",
+  "image": "https://girisushant.com.np/images/shushant.jpg",
+  "description": "Shushant Giri is a Nepal-based UI/UX designer and photographer who creates user-friendly digital experiences and fine-art photos.",
+  "address": {
+    "@type": "PostalAddress",
+    "addressLocality": "Kathmandu",
+    "addressCountry": "NP"
   }
-  
+}
