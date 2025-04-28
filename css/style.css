@@ -3082,7 +3082,7 @@ ol {
     font-weight: 700;
     color: #333;
     margin-bottom: 30px;
-    font-family: 'Lato', sans-serif;
+	font-family: "Quantico", sans-serif;
 }
 
 /* FAQ Item Styling */
@@ -3122,6 +3122,10 @@ ol {
     color: #555;
     line-height: 1.6;
     padding-top: 10px;
+}
+
+.hidden {
+    display: none;
 }
 
 /* Arrow Icon */

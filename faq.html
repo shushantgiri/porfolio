@@ -4,7 +4,7 @@
 <head>
     <meta charset="UTF-8">
     <meta name="description" content="Frequently Asked Questions (FAQ) about Shushant Giri Photography. Find answers to common inquiries related to photography services and more.">
-    <meta name="keywords" content="FAQ, Photography Services, Shushant Giri, Inquiries, Questions, Help">
+    <meta name="keywords" content="Shushant Giri, Photography, FAQ, Photography Services, Kathmandu, Nepal, Portrait Photography, Street Photography, Photography Inquiries, Photography Questions, Photography Tips, Photo Editor, Natural Photos">
     <meta name="viewport" content="width=device-width, initial-scale=1.0">
     <meta http-equiv="X-UA-Compatible" content="ie=edge">
     <title>FAQ | Shushant Giri Photography</title>
@@ -16,12 +16,12 @@
     <meta property="og:url" content="https://girisushant.com.np/faq">
     <meta property="og:type" content="website">
     <meta property="og:description" content="Find answers to common questions about Shushant Giri Photography services.">
-    <meta property="og:image" content="https://girisushant.com.np/img/faq-thumbnail.jpg">
+    <meta property="og:image" content="https://girisushant.com.np/img/thumbnail.jpg">
     <meta property="og:image:width" content="1500">
     <meta property="og:image:height" content="790">
 
     <meta name="twitter:title" content="FAQ | Shushant Giri Photography">
-    <meta name="twitter:image" content="https://girisushant.com.np/img/faq-thumbnail.jpg">
+    <meta name="twitter:image" content="https://girisushant.com.np/img/thumbnail.jpg">
     <meta name="twitter:card" content="summary">
     <meta name="twitter:description" content="Find answers to common questions about Shushant Giri Photography services.">
 
@@ -43,6 +43,29 @@
 </head>
 
 <body>
+    <!-- share button on left side -->
+
+    <div class="share-btn" id="share-btn">
+        <i class="fa fa-share-alt"></i>
+    </div>
+    
+    <div class="social-icons" id="social-icons">
+        <a href="https://www.facebook.com/girishushant" target="_blank" class="social-icon"><i class="fa fa-facebook"></i></a>
+        <a href="https://x.com/girishushant" target="_blank" class="social-icon"><i class="fa fa-twitter"></i></a>
+        <a href="https://instagram.com/shushant.giri" target="_blank" class="social-icon"><i class="fa fa-instagram"></i></a>
+        <a href="https://www.linkedin.com/shushantgiri" target="_blank" class="social-icon"><i class="fa fa-linkedin"></i></a>
+    </div>
+    
+    <script>
+        document.getElementById("share-btn").addEventListener("click", function() {
+            var socialIcons = document.getElementById("social-icons");
+            var shareButton = document.getElementById("share-btn");
+    
+            socialIcons.classList.toggle("show");
+            shareButton.classList.toggle("show");
+        });
+    </script>
+
     <!-- FAQ Section Begin -->
     <div class="breadcrumb-option spad">
         <div class="container">
@@ -63,25 +86,32 @@
         <h3>Frequently Asked Questions</h3>
     
         <div class="faq-item">
-            <div class="faq-question">What is the purpose of this site?</div>
-            <div class="faq-answer">This site provides answers to frequently asked questions...</div>
+            <div class="faq-question">Where are you located?</div>
+            <div class="faq-answer">I am currently based in Kathmandu, Nepal, but I am available for travel projects too!</div>
         </div>
         <div class="faq-item">
-            <div class="faq-question">How do I use the services?</div>
-            <div class="faq-answer">You can use our services by following the instructions...</div>
+            <div class="faq-question">Do you still capture photos?</div>
+            <div class="faq-answer">Yes, I capture random portrait photos and enjoy street photography and other spontaneous moments during my travels.</div>
+        </div>
+        <div class="faq-item">
+            <div class="faq-question">What types of photos do you click?</div>
+            <div class="faq-answer">I enjoy capturing portraits, street photography, and random moments that I find interesting during my travels.</div>
+        </div>
+        <div class="faq-item">
+            <div class="faq-question">Can I book you for a private photoshoot?</div>
+            <div class="faq-answer">I do not offer private photoshoots, as I prefer to capture spontaneous moments and enjoy photography on my own terms.</div>
         </div>
     
-        <!-- Hidden FAQ Items for Show More -->
-        <div class="faq-item more-faq-item">
-            <div class="faq-question">What is your refund policy?</div>
-            <div class="faq-answer">Our refund policy is simple...</div>
+        <!-- Hidden FAQ items -->
+        <div class="faq-item hidden">
+            <div class="faq-question">How much do you charge per session?</div>
+            <div class="faq-answer">I do not charge for photoshoots. I capture images purely for the joy of photography.</div>
         </div>
-        <div class="faq-item more-faq-item">
-            <div class="faq-question">How do I contact customer support?</div>
-            <div class="faq-answer">You can contact us via email or phone...</div>
+        <div class="faq-item hidden">
+            <div class="faq-question">Do you offer photo editing services?</div>
+            <div class="faq-answer">I prefer to keep my photos as natural as possible, but I may make basic edits for personal projects.</div>
         </div>
     
-        <!-- Show More Button -->
         <button class="show-more-btn">Show More</button>
     </div>
     
@@ -115,7 +145,7 @@
                         </ul>
                         <ul>
                             <li><a href="https://designer.girisushant.com.np/" target="_blank">Design Works</a></li>
-                            <li><a href="#">Portfolio</a></li>
+                            <li><a href="/faq.html">FAQ</a></li>
                             <li><a href="/services.html">Services</a></li>
                         </ul>
                     </div>
@@ -152,30 +182,37 @@
     <script src="js/owl.carousel.min.js"></script>
 
     <script>
-           // Toggle the answer visibility when a question is clicked
-document.querySelectorAll('.faq-question').forEach(question => {
-    question.addEventListener('click', function() {
-        const faqItem = this.closest('.faq-item');
-        const answer = faqItem.querySelector('.faq-answer'); // Get the corresponding answer
-        
-        // Toggle the 'active' class on faq-item and answer visibility
-        faqItem.classList.toggle('active');
-        answer.style.display = faqItem.classList.contains('active') ? 'block' : 'none'; // Show or hide answer
-    });
-});
+        // FAQ Question Click - open instantly with one click
+        document.querySelectorAll('.faq-question').forEach(question => {
+            question.addEventListener('click', function() {
+                const faqItem = this.closest('.faq-item');
+                const answer = faqItem.querySelector('.faq-answer');
 
-// Show more FAQ items when the "Show More" button is clicked
-document.querySelector('.show-more-btn').addEventListener('click', () => {
-    const hiddenFaqItems = document.querySelectorAll('.more-faq-item');
-    hiddenFaqItems.forEach(item => item.classList.toggle('active'));
-    const button = document.querySelector('.show-more-btn');
-    if (button.innerHTML === 'Show More') {
-        button.innerHTML = 'Show Less';
-    } else {
-        button.innerHTML = 'Show More';
-    }
-});
+                // Close all answers first
+                document.querySelectorAll('.faq-item').forEach(item => {
+                    if (item !== faqItem) { // keep clicked one open
+                        item.classList.remove('active');
+                        item.querySelector('.faq-answer').style.display = 'none';
+                    }
+                });
 
+                // Open clicked question instantly
+                faqItem.classList.toggle('active');
+                answer.style.display = faqItem.classList.contains('active') ? 'block' : 'none';
+            });
+        });
+
+        // Show More / Show Less Button
+        const showMoreBtn = document.querySelector('.show-more-btn');
+        showMoreBtn.addEventListener('click', () => {
+            const hiddenFaqItems = document.querySelectorAll('.faq-item.hidden');
+    
+            hiddenFaqItems.forEach(item => {
+                item.style.display = (item.style.display === 'block') ? 'none' : 'block';
+            });
+
+            showMoreBtn.innerText = (showMoreBtn.innerText === 'Show More') ? 'Show Less' : 'Show More';
+        });
     </script>
 </body>
 
