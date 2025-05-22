@@ -3189,3 +3189,85 @@ ol {
         font-size: 1rem;
     }
 }
+#suggestion-box {
+  position: fixed;
+  bottom: 20px;
+  right: 20px;
+  width: 280px; /* Default width for desktop */
+  max-width: 90vw; /* max 90% viewport width */
+  background: #fff;
+  border-radius: 12px;
+  box-shadow: 0 6px 20px rgba(0,0,0,0.2);
+  padding: 16px;
+  font-family: sans-serif;
+  z-index: 9999;
+  animation: slideIn 0.6s ease-out;
+  box-sizing: border-box;
+}
+
+@keyframes slideIn {
+  from { transform: translateY(50px); opacity: 0; }
+  to { transform: translateY(0); opacity: 1; }
+}
+
+.suggestion-header {
+  font-weight: bold;
+  margin-bottom: 10px;
+  display: flex;
+  justify-content: space-between;
+  align-items: center;
+}
+
+.close-btn {
+  cursor: pointer;
+  font-size: 20px;
+  color: #999;
+}
+
+#suggestion-box textarea {
+  width: 100%;
+  height: 60px;
+  border: 1px solid #ddd;
+  border-radius: 8px;
+  padding: 8px;
+  resize: none;
+  margin-bottom: 10px;
+  font-size: 14px;
+  box-sizing: border-box;
+}
+
+#suggestion-box button {
+  background: #007bff;
+  color: white;
+  border: none;
+  padding: 8px 14px;
+  border-radius: 6px;
+  cursor: pointer;
+  font-weight: bold;
+  width: 100%;
+  transition: background-color 0.3s ease;
+}
+
+#suggestion-box button:hover {
+  background: #0056b3;
+}
+
+/* Responsive styles for mobile devices */
+@media (max-width: 480px) {
+  #suggestion-box {
+    width: 90vw;   /* almost full width on small phones */
+    bottom: 10px;
+    right: 5vw;
+    padding: 12px;
+  }
+
+  #suggestion-box textarea {
+    height: 50px;
+    font-size: 13px;
+  }
+
+  #suggestion-box button {
+    padding: 8px 10px;
+    font-size: 14px;
+  }
+}

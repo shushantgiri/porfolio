@@ -286,6 +286,42 @@
     </div>
 </footer>
 <!-- Footer Section End -->
+    
+<!-- Suggestion Popup -->
+<div id="suggestion-box">
+  <div class="suggestion-header">
+    👋 Have any suggestions?
+    <span onclick="closeSuggestion()" class="close-btn">&times;</span>
+  </div>
+  <textarea id="suggestion-text" placeholder="Let us know how we can improve..."></textarea>
+  <button onclick="submitSuggestion()">Submit</button>
+</div>
+
+<script>
+  function closeSuggestion() {
+    document.getElementById('suggestion-box').style.display = 'none';
+  }
+
+  function openSuggestionBox() {
+    document.getElementById('suggestion-box').style.display = 'block';
+  }
+
+  function submitSuggestion() {
+    const textarea = document.getElementById('suggestion-text');
+    const feedback = textarea.value.trim();
+
+    if (feedback) {
+      textarea.value = '';
+      textarea.placeholder = "Thank you! Your suggestions has been sent.";
+      textarea.style.borderColor = "#28a745"; // green border
+      textarea.style.color = "#000";
+    } else {
+      textarea.placeholder = "Please enter your suggestion before submitting.";
+      textarea.style.borderColor = "#dc3545"; // red border
+    }
+  }
+</script>
+
 
     <!-- Search model Begin -->
     <div class="search-model">
