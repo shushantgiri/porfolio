@@ -8,16 +8,42 @@
     "https://www.linkedin.com/in/shushantgiri"
   ],
   "jobTitle": "UI/UX Designer & Photographer",
+  "hasOccupation": {
+    "@type": "Occupation",
+    "name": "UI/UX Designer & Photographer",
+    "description": "Specializing in user experience design, user interface design, and photography services."
+  },
   "worksFor": {
     "@type": "Organization",
-    "name": "Freelance"
+    "name": "Freelance",
+    "url": "https://girisushant.com.np",
+    "logo": "https://girisushant.com.np/images/logo.png"
   },
   "email": "mailto:info@girisushant.com.np",
   "image": "https://girisushant.com.np/images/shushant.jpg",
-  "description": "Shushant Giri is a Nepal-based UI/UX designer and photographer who creates user-friendly digital experiences and fine-art photos.",
+  "description": "Shushant Giri is a Nepal-based UI/UX designer and photographer offering creative design and photography services. Currently preparing for higher studies abroad to expand skills and global experience.",
   "address": {
     "@type": "PostalAddress",
     "addressLocality": "Kathmandu",
+    "addressRegion": "Bagmati",
+    "postalCode": "44600",
     "addressCountry": "NP"
+  },
+  "knowsAbout": [
+    "UI/UX Design",
+    "Web Design",
+    "App Design",
+    "Photography",
+    "Photo Editing",
+    "Figma",
+    "Adobe XD",
+    "Creative Direction"
+  ],
+  "gender": "Male",
+  "nationality": "Nepali",
+  "hasCredential": {
+    "@type": "EducationalOccupationalCredential",
+    "credentialCategory": "In Progress",
+    "educationalLevel": "Undergraduate"
   }
 }
