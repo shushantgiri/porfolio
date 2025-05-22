@@ -293,34 +293,77 @@
     👋 Have any suggestions?
     <span onclick="closeSuggestion()" class="close-btn">&times;</span>
   </div>
-  <textarea id="suggestion-text" placeholder="Let us know how we can improve..."></textarea>
-  <button onclick="submitSuggestion()">Submit</button>
+  <form id="suggestion-form" onsubmit="return submitSuggestion(event)">
+    <div id="error-msg" style="color: #dc3545; font-size: 13px; margin-bottom: 6px; display: none;"></div><div id="error-msg" style="color: #dc3545; font-size: 13px; margin-top: 4px; display: none;"></div>
+    <textarea name="suggestion" id="suggestion-text" placeholder="Let us know how we can improve..." required></textarea>
+    <button type="submit" id="submit-btn">Submit</button>
+  </form>
 </div>
 
 <script>
   function closeSuggestion() {
+    const textarea = document.getElementById('suggestion-text');
+    const button = document.getElementById('submit-btn');
+    const errorMsg = document.getElementById('error-msg');
+
+    textarea.placeholder = "Let us know how we can improve...";
+    textarea.style.borderColor = "#ddd";
+    textarea.style.color = "#000";
+    textarea.value = '';
+
+    button.textContent = "Submit";
+    button.style.backgroundColor = "#007bff";
+    button.style.cursor = "pointer";
+    button.disabled = false;
+
+    errorMsg.style.display = 'none';
+    errorMsg.textContent = '';
+
     document.getElementById('suggestion-box').style.display = 'none';
   }
 
-  function openSuggestionBox() {
-    document.getElementById('suggestion-box').style.display = 'block';
-  }
+  function submitSuggestion(event) {
+    event.preventDefault();
 
-  function submitSuggestion() {
     const textarea = document.getElementById('suggestion-text');
     const feedback = textarea.value.trim();
+    const button = document.getElementById('submit-btn');
+    const errorMsg = document.getElementById('error-msg');
 
-    if (feedback) {
+    if (!feedback) {
+      errorMsg.textContent = "Please enter your suggestion before submitting.";
+      errorMsg.style.display = 'block';
+
+      textarea.style.borderColor = "#dc3545"; // red border
+      return false;
+    }
+
+    // Clear error on valid input
+    errorMsg.style.display = 'none';
+    errorMsg.textContent = '';
+    textarea.style.borderColor = "#ddd";
+
+    button.disabled = true;
+    button.textContent = "Submitting...";
+
+    // Simulate network delay
+    setTimeout(() => {
       textarea.value = '';
-      textarea.placeholder = "Thank you! Your suggestions has been sent.";
+      textarea.placeholder = "Thank you! Your suggestion has been sent.";
       textarea.style.borderColor = "#28a745"; // green border
       textarea.style.color = "#000";
-    } else {
-      textarea.placeholder = "Please enter your suggestion before submitting.";
-      textarea.style.borderColor = "#dc3545"; // red border
-    }
+
+      button.textContent = "Submitted";
+      button.style.backgroundColor = "#28a745"; // green button
+      button.style.cursor = "default";
+      button.disabled = true;
+    }, 1500);
+
+    return false;
   }
 </script>
+
+
 
 
     <!-- Search model Begin -->
