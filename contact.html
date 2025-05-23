@@ -222,49 +222,168 @@
                     </div>
                 </div>
                 <div class="col-lg-6 col-md-6">
-                    <div class="contact-form">
-                        <h3>Let's Collaborate!</h3>
-                        <form action="javascript:;" onsubmit="submitData()" id="contact_form">
-                            <div>
-                                <input type="text" placeholder="Full Name" name="name" id="name" oninput="validateName()" required>
-                                <span id="nameError" class="error"></span>
-                            </div>
-                            <div>
-                                <input type="text" placeholder="Email" name="email" required>
-                            </div>
-                            <div>
-                                <input type="text" placeholder="Phone Number" name="phone" required>
-                            </div>
-                            <div>
-                                <textarea placeholder="Message" name="message" required></textarea>
-                            </div>
-                            <button type="submit" class="site-btn">Submit</button>
-                        </form>
-                    </div>
-                </div>
-            </div>
+  <div class="contact-form">
+    <h3>Let's Collaborate!</h3>
+    <form action="javascript:;" onsubmit="submitData()" id="contact_form">
+      <div>
+       <input id="name" placeholder="Full Name" oninput="resetInput(this, 'Full Name')">
+        <span id="nameError" class="input-error"></span>
+      </div>
+      <div>
+        <input id="email" placeholder="Email" oninput="resetInput(this, 'Email')">
+        <span id="emailError" class="input-error"></span>
+      </div>
+            <div>
+        <input type="tel" id="phone" name="phone" placeholder="Phone Number" maxlength="10" inputmode="numeric" pattern="[0-9]*">
+        <span id="phoneError" class="input-error"></span>
+        </div>
+      <div>
+       <textarea id="message" placeholder="Message" oninput="resetInput(this, 'Message')"></textarea>
+        <span id="messageError" class="input-error"></span>
+      </div>
+      <button type="submit" class="site-btn">Submit</button>
+    </form>
+  </div>
+</div>
+
+<div id="successMessage" class="success-message">Successfully Submitted!</div>
+
+<style>
+  .success-message {
+    position: fixed;
+    top: 100px;
+    right: -300px;
+    background-color: #4BB543;
+    color: white;
+    padding: 15px 25px;
+    border-radius: 5px;
+    box-shadow: 0 2px 8px rgba(0,0,0,0.2);
+    font-weight: bold;
+    transition: right 0.5s ease, opacity 0.5s ease;
+    opacity: 0;
+    z-index: 9999;
+    font-size: 16px;
+    max-width: 300px;
+    word-wrap: break-word;
+  }
+  .success-message.show {
+    right: 20px;
+    opacity: 1;
+  }
+  .success-message.hide {
+    opacity: 0;
+    right: -300px;
+  }
+  @media screen and (max-width: 480px) {
+    .success-message {
+      padding: 10px 15px;
+      font-size: 14px;
+      max-width: 90%;
+      right: -250px;
+    }
+    .success-message.show {
+      right: 10px;
+    }
+    .success-message.hide {
+      right: -250px;
+    }
+  }
+  .input-error {
+    color: #e74c3c;
+    font-size: 12px;
+    margin-top: 4px;
+    display: block;
+    min-height: 16px;
+    font-weight: 600;
+  }
+</style>
+
+<script>
+  // Enforce digits only in phone input as user types
+  document.getElementById('phone').addEventListener('input', function () {
+    this.value = this.value.replace(/[^0-9]/g, '');
+  });
+
+  function submitData() {
+    const nameInput = document.getElementById('name');
+    const emailInput = document.getElementById('email');
+    const phoneInput = document.getElementById('phone');
+    const messageInput = document.getElementById('message');
+
+    // Reset all inputs styles and placeholders before validation
+    resetInput(nameInput, "Full Name");
+    resetInput(emailInput, "Email");
+    resetInput(phoneInput, "Phone Number");
+    resetInput(messageInput, "Message");
+
+    const name = nameInput.value.trim();
+    const email = emailInput.value.trim();
+    const phone = phoneInput.value.trim();
+    const message = messageInput.value.trim();
+
+    const successMsg = document.getElementById('successMessage');
+
+    let isValid = true;
+
+    function showInputError(input, errorMsg) {
+      input.value = '';              // Clear current input value
+      input.placeholder = errorMsg;  // Show error message as placeholder
+      input.classList.add('input-error'); // Add red styling class
+    }
+
+    // Validation checks
+    if (name.length === 0) {
+      showInputError(nameInput, "Please enter your full name.");
+      isValid = false;
+    }
+
+    if (!email.endsWith('@gmail.com')) {
+      showInputError(emailInput, "Email must be @gmail.com");
+      isValid = false;
+    }
+
+    const phoneRegex = /^\d{10}$/;
+    if (!phoneRegex.test(phone)) {
+      showInputError(phoneInput, "Phone must be 10 digits");
+      isValid = false;
+    }
+
+    if (message.length < 10) {
+      showInputError(messageInput, "Message at least 10 characters");
+      isValid = false;
+    }
+
+    if (!isValid) return; // Stop submission if invalid
+
+    // Show success message
+    successMsg.classList.add('show');
+    successMsg.classList.remove('hide');
+
+    // Hide success after 3 seconds
+    setTimeout(() => {
+      successMsg.classList.remove('show');
+      successMsg.classList.add('hide');
+    }, 3000);
+
+    // Reset form inputs
+    document.getElementById('contact_form').reset();
+
+    // Reset input styles and placeholders after reset
+    resetInput(nameInput, "Full Name");
+    resetInput(emailInput, "Email");
+    resetInput(phoneInput, "Phone Number");
+    resetInput(messageInput, "Message");
+  }
+
+  function resetInput(input, placeholderText) {
+    input.classList.remove('input-error');
+    input.placeholder = placeholderText;
+  }
+</script>
+
+      </div>
         </div>
     </section>
-    <script src="https://cdn.jsdelivr.net/npm/sweetalert2@10"></script>
-
-    <!-- Your JavaScript code -->
-    <script>
-        function submitData() {
-            // Perform form submission logic here
-            // For demonstration purposes, let's assume the form is successfully submitted
-    
-            // Show SweetAlert message
-            Swal.fire({
-                icon: 'success',
-                title: 'Form Submitted!',
-                text: 'Thank you, your information has been successfully submitted. We will get in touch with you soon.',
-            });
-            
-            // You may want to prevent the form from submitting and refreshing the page
-            // You can do this by returning false in the onsubmit attribute
-            return false;
-        }
-    </script>
 
    <!-- Footer Section Begin -->
    <footer class="footer-section">

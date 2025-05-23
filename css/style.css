@@ -2429,7 +2429,7 @@ ol {
 	font-size: 14px;
 	color: #444444;
 	background: transparent;
-	margin-bottom: 30px;
+	margin-bottom: 2px;
 	border: 1px solid #e1e1e1;
 }
 
@@ -2463,7 +2463,7 @@ ol {
 	background: transparent;
 	resize: none;
 	border: 1px solid #e1e1e1;
-	margin-bottom: 24px;
+	margin-bottom: 2px;
 }
 
 .contact-form form textarea::-webkit-input-placeholder {
@@ -3270,4 +3270,52 @@ ol {
     padding: 8px 10px;
     font-size: 14px;
   }
+}
+.success-message {
+  position: fixed;
+  top: 100px;
+  right: -300px; /* start offscreen to the right */
+  background-color: #4BB543; /* green color */
+  color: white;
+  padding: 15px 25px;
+  border-radius: 5px;
+  box-shadow: 0 2px 8px rgba(0,0,0,0.2);
+  font-weight: bold;
+  transition: right 0.5s ease, opacity 0.5s ease;
+  opacity: 0;
+  z-index: 9999;
+  font-size: 16px;
+  max-width: 300px;
+  word-wrap: break-word;
+}
+
+.success-message.show {
+  right: 20px; /* slide in */
+  opacity: 1;
+}
+
+.success-message.hide {
+  opacity: 0;
+  right: -300px; /* slide out */
+}
+
+/* Mobile view adjustments */
+@media screen and (max-width: 480px) {
+  .success-message {
+    padding: 10px 15px;
+    font-size: 14px;
+    max-width: 90%; /* smaller width relative to screen */
+    right: -250px; /* less offset for smaller screens */
+  }
+
+  .success-message.show {
+    right: 10px; /* slide in closer on small screens */
+  }
+
+  .success-message.hide {
+    right: -250px;
+  }
+}
+.input-error::placeholder {
+  color: red !important;
 }
