@@ -38,7 +38,9 @@ body {
 	font-family: "Open Sans", sans-serif;
 	-webkit-font-smoothing: antialiased;
 	font-smoothing: antialiased;
+    scroll-behavior: smooth;
 }
+
 
 h1,
 h2,
@@ -3318,4 +3320,167 @@ ol {
 }
 .input-error::placeholder {
   color: red !important;
+}
+
+/* Hamburger */
+.hamburger {
+  font-family: 'Quantico', sans-serif; /* Bold & impactful font */
+  font-weight: 600;
+  font-size: 28px;
+  position: fixed;
+  top: 160px;
+  left: 10px;
+  cursor: pointer;
+  background: rgba(255, 255, 255, 0.85);
+  padding: 8px 12px;
+  border-radius: 4px;
+  z-index: 1001;
+  box-shadow: 0 2px 8px rgba(0,0,0,0.15);
+  transition: background-color 0.3s ease, transform 0.3s ease, opacity 0.3s ease;
+  user-select: none;
+  transform: translateX(0);
+  opacity: 1;
+}
+.hamburger:hover {
+  background: rgba(255, 255, 255, 1);
+}
+
+/* Slide hamburger out to left and fade */
+.hamburger.slide-out {
+  transform: translateX(-100px);
+  opacity: 0;
+  pointer-events: none;
+}
+
+/* Sidebar */
+.sidebar {
+  position: fixed;
+  top: 40px;
+  left: -250px;
+  width: 250px;
+  height: calc(100vh - 80px);
+  background-color: white;
+  color: black;
+  padding-top: 10px;
+  padding-bottom: 10px;
+  transition: left 0.3s ease;
+  z-index: 10000; /* Increased z-index */
+  box-shadow: 2px 0 8px rgba(0,0,0,0.3);
+  overflow-y: auto;
+  font-family: 'Open Sans', sans-serif;
+  border-radius: 2px;
+  display: flex;
+  flex-direction: column;
+  justify-content: space-between;
+}
+.sidebar.active {
+  left: 0;
+}
+
+/* Sidebar navigation list */
+.sidebar ul {
+  list-style: none;
+  padding: 0;
+  margin: 0;
+  flex-grow: 1; /* take available vertical space */
+  overflow-y: auto; /* scroll if needed */
+}
+
+.sidebar ul li {
+  border-bottom: 1px solid #ddd; /* light gray */
+}
+
+.sidebar ul li a {
+  display: flex;
+  align-items: center;
+  color: #007bff;
+  text-decoration: none;
+  padding: 15px 20px;
+  font-weight: 600;
+  font-size: 0.9rem; /* smaller font */
+  transition: background-color 0.3s ease;
+  font-family: "Quantico", sans-serif;
+}
+
+.sidebar ul li a:hover {
+  background-color: #3498db;
+  color: white;
+  border-radius: 4px;
+}
+
+/* Icon inside navigation */
+.sidebar ul li a .icon,
+.sidebar ul li a i.fa {
+  margin-right: 12px;
+  font-size: 18px;
+  width: 20px; /* keep icons aligned */
+  text-align: center;
+}
+
+/* Close button */
+.close-btn {
+  position: absolute;
+  top: 15px;
+  right: 15px;
+  font-family: 'Quantico', sans-serif;
+  font-weight: 700;
+  font-size: 28px;
+  cursor: pointer;
+  color: gray;
+  transition: color 0.3s ease;
+  user-select: none;
+}
+.close-btn:hover {
+  color: #ff6f61;
+}
+
+/* Logo Container */
+.logo-container {
+  text-align: center;
+  padding: 20px 0 10px 0;
+  border-bottom: 1px solid rgba(255,255,255,0.1);
+}
+
+.sidebar-logo {
+  max-width: 120px;
+  height: auto;
+  margin: 0 auto;
+  display: block;
+}
+
+.tagline {
+  background-color: gainsboro; /* This adds the white background */
+  color: #333;             /* Dark text color for good contrast */
+  font-size: 14px;
+  margin-top: 6px;
+  font-style: normal;      /* No italic */
+  letter-spacing: 1px;
+  padding: 4px 8px;        /* Space inside the background */
+  border-radius: 4px;      /* Rounded corners */
+  display: inline-block;   /* Shrinks to content width */
+  margin-top: 10px;
+}
+
+/* Responsive for Mobile */
+@media (max-width: 768px) {
+  .sidebar {
+    top: 0;
+    left: -100vw;
+    width: 100vw;
+    height: 100vh;
+    padding-top: 10px;
+    padding-bottom: 10px;
+    border-radius: 0;
+  }
+  .sidebar.active {
+    left: 0;
+  }
+  /* Smaller hamburger on mobile */
+  .hamburger {
+    top: 160px;
+    left: 10px;
+    font-size: 22px;       /* smaller font size */
+    padding: 6px 8px;      /* smaller padding */
+    border-radius: 4px;
+  }
 }
