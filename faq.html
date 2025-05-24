@@ -127,7 +127,96 @@
         </div>
     </div>
     <!-- Breadcrumb End -->
+<!-- Hamburger icon -->
+<div class="hamburger" id="hamburger">&#9776;</div>
 
+<!-- Sidebar Navigation -->
+<div class="sidebar" id="sidebar">
+  <div class="logo-container">
+    <img src="img/favicon.png" alt="Logo" class="sidebar-logo" />
+    <p class="tagline">Capture the stories</p>
+  </div>
+  <div class="close-btn" id="closeBtn">&times;</div>
+  <ul>
+    <li><a href="/index.html"><i class="fa fa-home"></i> Home</a></li>
+    <li><a href="/about.html"><i class="fa fa-info-circle"></i> About</a></li>
+    <li><a href="/faq.html"><i class="fa fa-question-circle"></i> FAQ</a></li>
+    <li><a href="https://designer.girisushant.com.np"><i class="fa fa-pencil"></i> UI UX Designer</a></li>
+    <li><a href="/contact.html"><i class="fa fa-envelope"></i> Contact</a></li>
+  </ul>
+</div>
+
+<script>
+  const hamburger = document.getElementById("hamburger");
+const sidebar = document.getElementById("sidebar");
+const closeBtn = document.getElementById("closeBtn");
+
+hamburger.addEventListener("click", () => {
+  // Slide hamburger out to left
+  hamburger.classList.add("slide-out");
+
+  // After the slide-out animation ends (300ms), show sidebar
+  setTimeout(() => {
+    sidebar.classList.add("active");
+  }, 300);
+});
+
+closeBtn.addEventListener("click", () => {
+  // Slide sidebar out
+  sidebar.classList.remove("active");
+
+  // After sidebar slides out (300ms), slide hamburger back in
+  setTimeout(() => {
+    hamburger.classList.remove("slide-out");
+  }, 300);
+});
+
+// Auto hide sidebar and show hamburger on scroll
+window.addEventListener("scroll", () => {
+  if (sidebar.classList.contains("active")) {
+    sidebar.classList.remove("active");
+    hamburger.classList.remove("slide-out");
+  }
+});
+</script>
+<script>
+   function throttle(func, limit) {
+  let inThrottle;
+  return function () {
+    if (!inThrottle) {
+      func.apply(this, arguments);
+      inThrottle = true;
+      setTimeout(() => inThrottle = false, limit);
+    }
+  };
+}
+
+const hamburger = document.getElementById("hamburger");
+const sidebar = document.getElementById("sidebar");
+const closeBtn = document.getElementById("closeBtn");
+
+hamburger.addEventListener("click", () => {
+  hamburger.classList.add("slide-out");
+  setTimeout(() => {
+    sidebar.classList.add("active");
+  }, 300);
+});
+
+closeBtn.addEventListener("click", () => {
+  sidebar.classList.remove("active");
+  setTimeout(() => {
+    hamburger.classList.remove("slide-out");
+  }, 300);
+});
+
+window.addEventListener("scroll", throttle(() => {
+  if (sidebar.classList.contains("active")) {
+    sidebar.classList.remove("active");
+    hamburger.classList.remove("slide-out");
+  }
+}, 200));  // runs max once every 200ms
+
+</script>
     <!-- FAQ Section Begin -->
     <section class="faq-section spad">
         <div class="container">
@@ -163,10 +252,11 @@
 
             <div class="faq-item">
                 <div class="faq-question">
-                     How often do you upload new photos?
+                      Is your photography available for hire or commercial use??
                 </div>
                 <div class="faq-answer">
-                    <p>I upload new photos whenever I finish a trip and have good shots to share.</p>
+                    <p>No, this website is just a personal collection of the moments I see and love. I don’t shoot for events or commercial purposes. I simply enjoy capturing everyday life, street moments, and random portraits for myself.
+                    </p>
                 </div>
             </div>
 
