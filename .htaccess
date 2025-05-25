@@ -1,16 +1,21 @@
-ErrorDocument 404 /404.html
-
+# Enable rewriting
 RewriteEngine On
 
-# Redirect /index or /index.html to root /
+# Custom 404 error page
+ErrorDocument 404 /404.html
+
+# Redirect /index.html or /index to root /
 RewriteCond %{THE_REQUEST} /index(\.html)? [NC]
 RewriteRule ^index(\.html)?$ / [R=301,L]
 
-# Redirect any .html URLs to URLs without extension (except index.html handled above)
-RewriteCond %{THE_REQUEST} \s/([^.]+)\.html [NC]
-RewriteRule ^ /%1 [R=301,L]
+# Redirect any requests with .html extension to extensionless URL (except for directories)
+RewriteCond %{THE_REQUEST} \s([^.]+)\.html [NC]
+RewriteCond %{REQUEST_FILENAME} -f
+RewriteRule ^([^.]+)\.html$ /$1 [R=301,L]
 
-# Internally rewrite clean URLs to .html files if they exist
+# If the requested URL is not a directory and not a file,
+# internally rewrite the URL by appending .html to serve the correct file
 RewriteCond %{REQUEST_FILENAME} !-d
+RewriteCond %{REQUEST_FILENAME} !-f
 RewriteCond %{REQUEST_FILENAME}.html -f
-RewriteRule ^([^/]+)/?$ $1.html [L]
+RewriteRule ^([^/]+)/?$ $1.
