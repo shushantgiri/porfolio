@@ -3,8 +3,10 @@
 
 <head>
     <meta charset="UTF-8" />
-    <meta name="description" content="Frequently Asked Questions about Shushant Giri's photography, design services, and collaborations." />
-    <meta name="keywords" content="FAQ, Frequently Asked Questions, Shushant Giri, Photography FAQ, Design FAQ, Collaborations" />
+    <meta name="description"
+        content="Frequently Asked Questions about Shushant Giri's photography, design services, and collaborations." />
+    <meta name="keywords"
+        content="FAQ, Frequently Asked Questions, Shushant Giri, Photography FAQ, Design FAQ, Collaborations" />
     <meta name="viewport" content="width=device-width, initial-scale=1.0" />
     <meta http-equiv="X-UA-Compatible" content="ie=edge" />
     <title>FAQ | Shushant Giri Photography</title>
@@ -16,7 +18,8 @@
     <meta property="og:title" content="FAQ | Shushant Giri" />
     <meta property="og:url" content="https://girisushant.com.np/faq.html" />
     <meta property="og:type" content="website" />
-    <meta property="og:description" content="Find answers to frequently asked questions about photography, UI/UX design, and collaborations with Shushant Giri." />
+    <meta property="og:description"
+        content="Find answers to frequently asked questions about photography, UI/UX design, and collaborations with Shushant Giri." />
     <meta property="og:image" content="https://girisushant.com.np/img/thumbnail.jpg" />
     <meta property="og:image:width" content="1500" />
     <meta property="og:image:height" content="790" />
@@ -37,8 +40,8 @@
     <meta name="robots" content="index, follow" />
 
     <!-- Google Fonts -->
-<link href="https://fonts.googleapis.com/css?family=Quantico:400,700&display=swap" rel="stylesheet">
-<link href="https://fonts.googleapis.com/css?family=Open+Sans:400,600,700&display=swap" rel="stylesheet">
+    <link href="https://fonts.googleapis.com/css?family=Quantico:400,700&display=swap" rel="stylesheet">
+    <link href="https://fonts.googleapis.com/css?family=Open+Sans:400,600,700&display=swap" rel="stylesheet">
 
     <!-- Css Styles -->
     <link rel="stylesheet" href="css/bootstrap.min.css" type="text/css" />
@@ -62,10 +65,13 @@
     </div>
 
     <div class="social-icons" id="social-icons">
-        <a href="https://www.facebook.com/girishushant" target="_blank" class="social-icon"><i class="fa fa-facebook"></i></a>
+        <a href="https://www.facebook.com/girishushant" target="_blank" class="social-icon"><i
+                class="fa fa-facebook"></i></a>
         <a href="https://x.com/girishushant" target="_blank" class="social-icon"><i class="fa fa-twitter"></i></a>
-        <a href="https://instagram.com/shushant.giri" target="_blank" class="social-icon"><i class="fa fa-instagram"></i></a>
-        <a href="https://www.linkedin.com/shushantgiri" target="_blank" class="social-icon"><i class="fa fa-linkedin"></i></a>
+        <a href="https://instagram.com/shushant.giri" target="_blank" class="social-icon"><i
+                class="fa fa-instagram"></i></a>
+        <a href="https://www.linkedin.com/shushantgiri" target="_blank" class="social-icon"><i
+                class="fa fa-linkedin"></i></a>
     </div>
 
     <script>
@@ -127,96 +133,63 @@
         </div>
     </div>
     <!-- Breadcrumb End -->
-<!-- Hamburger icon -->
-<div class="hamburger" id="hamburger">&#9776;</div>
+    <!-- Hamburger icon -->
+    <div class="hamburger" id="hamburger">&#9776;</div>
 
-<!-- Sidebar Navigation -->
-<div class="sidebar" id="sidebar">
-  <div class="logo-container">
-    <img src="img/favicon.png" alt="Logo" class="sidebar-logo" />
-    <p class="tagline">Capture the stories</p>
-  </div>
-  <div class="close-btn" id="closeBtn">&times;</div>
-  <ul>
-    <li><a href="/index.html"><i class="fa fa-home"></i> Home</a></li>
-    <li><a href="/about.html"><i class="fa fa-info-circle"></i> About</a></li>
-    <li><a href="/faq.html"><i class="fa fa-question-circle"></i> FAQ</a></li>
-    <li><a href="https://designer.girisushant.com.np"><i class="fa fa-pencil"></i> UI UX Designer</a></li>
-    <li><a href="/contact.html"><i class="fa fa-envelope"></i> Contact</a></li>
-  </ul>
-</div>
+    <!-- Sidebar Navigation -->
+    <div class="sidebar" id="sidebar">
+        <div class="logo-container">
+            <img src="img/favicon.png" alt="Logo" class="sidebar-logo" />
+            <p class="tagline">Capture the stories</p>
+        </div>
+        <div class="close-btn" id="closeBtn">&times;</div>
+        <ul>
+            <li><a href="/index.html"><i class="fa fa-home"></i> Home</a></li>
+            <li><a href="/about.html"><i class="fa fa-info-circle"></i> About</a></li>
+            <li><a href="/faq.html"><i class="fa fa-question-circle"></i> FAQ</a></li>
+            <li><a href="https://designer.girisushant.com.np"><i class="fa fa-pencil"></i> UI UX Designer</a></li>
+            <li><a href="/contact.html"><i class="fa fa-envelope"></i> Contact</a></li>
+        </ul>
+    </div>
 
-<script>
-  const hamburger = document.getElementById("hamburger");
-const sidebar = document.getElementById("sidebar");
-const closeBtn = document.getElementById("closeBtn");
+    <script>
+        function throttle(func, limit) {
+            let inThrottle;
+            return function () {
+                if (!inThrottle) {
+                    func.apply(this, arguments);
+                    inThrottle = true;
+                    setTimeout(() => inThrottle = false, limit);
+                }
+            };
+        }
 
-hamburger.addEventListener("click", () => {
-  // Slide hamburger out to left
-  hamburger.classList.add("slide-out");
+        const hamburger = document.getElementById("hamburger");
+        const sidebar = document.getElementById("sidebar");
+        const closeBtn = document.getElementById("closeBtn");
 
-  // After the slide-out animation ends (300ms), show sidebar
-  setTimeout(() => {
-    sidebar.classList.add("active");
-  }, 300);
-});
+        hamburger.addEventListener("click", () => {
+            hamburger.classList.add("slide-out");
+            setTimeout(() => {
+                sidebar.classList.add("active");
+            }, 300);
+        });
 
-closeBtn.addEventListener("click", () => {
-  // Slide sidebar out
-  sidebar.classList.remove("active");
+        closeBtn.addEventListener("click", () => {
+            sidebar.classList.remove("active");
+            setTimeout(() => {
+                hamburger.classList.remove("slide-out");
+            }, 300);
+        });
 
-  // After sidebar slides out (300ms), slide hamburger back in
-  setTimeout(() => {
-    hamburger.classList.remove("slide-out");
-  }, 300);
-});
+        window.addEventListener("scroll", throttle(() => {
+            if (sidebar.classList.contains("active")) {
+                sidebar.classList.remove("active");
+                hamburger.classList.remove("slide-out");
+            }
+        }, 200));
+    </script>
 
-// Auto hide sidebar and show hamburger on scroll
-window.addEventListener("scroll", () => {
-  if (sidebar.classList.contains("active")) {
-    sidebar.classList.remove("active");
-    hamburger.classList.remove("slide-out");
-  }
-});
-</script>
-<script>
-   function throttle(func, limit) {
-  let inThrottle;
-  return function () {
-    if (!inThrottle) {
-      func.apply(this, arguments);
-      inThrottle = true;
-      setTimeout(() => inThrottle = false, limit);
-    }
-  };
-}
-
-const hamburger = document.getElementById("hamburger");
-const sidebar = document.getElementById("sidebar");
-const closeBtn = document.getElementById("closeBtn");
-
-hamburger.addEventListener("click", () => {
-  hamburger.classList.add("slide-out");
-  setTimeout(() => {
-    sidebar.classList.add("active");
-  }, 300);
-});
-
-closeBtn.addEventListener("click", () => {
-  sidebar.classList.remove("active");
-  setTimeout(() => {
-    hamburger.classList.remove("slide-out");
-  }, 300);
-});
-
-window.addEventListener("scroll", throttle(() => {
-  if (sidebar.classList.contains("active")) {
-    sidebar.classList.remove("active");
-    hamburger.classList.remove("slide-out");
-  }
-}, 200));  // runs max once every 200ms
-
-</script>
     <!-- FAQ Section Begin -->
     <section class="faq-section spad">
         <div class="container">
@@ -225,10 +198,11 @@ window.addEventListener("scroll", throttle(() => {
 
             <div class="faq-item">
                 <div class="faq-question">
-                     What kind of photography do you do?
+                    What kind of photography do you do?
                 </div>
                 <div class="faq-answer">
-                    <p>I don’t shoot events or programs. I enjoy taking random photos while traveling, especially of nature, streets, people, and simple happy moments like eating together or sharing smiles.</p>
+                    <p>I don’t shoot events or programs. I enjoy taking random photos while traveling, especially of
+                        nature, streets, people, and simple happy moments like eating together or sharing smiles.</p>
                 </div>
             </div>
 
@@ -237,7 +211,8 @@ window.addEventListener("scroll", throttle(() => {
                     Do you provide UI/UX design services?
                 </div>
                 <div class="faq-answer">
-                    <p>Yes, I also offer UI/UX design services for websites and mobile apps to help create intuitive user experiences.</p>
+                    <p>Yes, I also offer UI/UX design services for websites and mobile apps to help create intuitive
+                        user experiences.</p>
                 </div>
             </div>
 
@@ -252,17 +227,19 @@ window.addEventListener("scroll", throttle(() => {
 
             <div class="faq-item">
                 <div class="faq-question">
-                      Is your photography available for hire or commercial use??
+                    Is your photography available for hire or commercial use??
                 </div>
                 <div class="faq-answer">
-                    <p>No, this website is just a personal collection of the moments I see and love. I don’t shoot for events or commercial purposes. I simply enjoy capturing everyday life, street moments, and random portraits for myself.
+                    <p>No, this website is just a personal collection of the moments I see and love. I don’t shoot for
+                        events or commercial purposes. I simply enjoy capturing everyday life, street moments, and
+                        random portraits for myself.
                     </p>
                 </div>
             </div>
 
-             <div class="faq-item">
+            <div class="faq-item">
                 <div class="faq-question">
-                     Do you offer any photography workshops or training?           
+                    Do you offer any photography workshops or training?
                 </div>
                 <div class="faq-answer">
                     <p>Currently, I do not offer workshops, but I may consider it in the future.</p>
@@ -270,188 +247,192 @@ window.addEventListener("scroll", throttle(() => {
             </div>
 
             <div class="faq-item">
-            <div class="faq-question">
-                How can I contact you for any questions or inquiries?
-            </div>
-            <div class="faq-answer">
-                <p>You can reach me via WhatsApp at <strong>9810958014</strong> or email me at <strong>shushantgiri98@gmail.com</strong>. I’m happy to answer your queries!</p>
-            </div>
+                <div class="faq-question">
+                    How can I contact you for any questions or inquiries?
+                </div>
+                <div class="faq-answer">
+                    <p>You can reach me via WhatsApp at <strong>9810958014</strong> or email me at
+                        <strong>shushantgiri98@gmail.com</strong>. I’m happy to answer your queries!</p>
+                </div>
             </div>
 
         </div>
     </section>
     <!-- FAQ Section End -->
-     
+
     <script>
         // Wait until the document is fully loaded
-    document.addEventListener("DOMContentLoaded", function () {
-    const faqItems = document.querySelectorAll(".faq-item");
+        document.addEventListener("DOMContentLoaded", function () {
+            const faqItems = document.querySelectorAll(".faq-item");
 
-    faqItems.forEach((item) => {
-        item.addEventListener("click", function () {
-            // Toggle 'active' class on the clicked item
-            item.classList.toggle("active");
+            faqItems.forEach((item) => {
+                item.addEventListener("click", function () {
+                    // Toggle 'active' class on the clicked item
+                    item.classList.toggle("active");
 
-            // Get the answer element
-            const answer = item.querySelector(".faq-answer");
+                    // Get the answer element
+                    const answer = item.querySelector(".faq-answer");
 
-            // Show or hide the answer
-            if (answer.style.display === "block") {
-                answer.style.display = "none";
-            } else {
-                answer.style.display = "block";
-            }
+                    // Show or hide the answer
+                    if (answer.style.display === "block") {
+                        answer.style.display = "none";
+                    } else {
+                        answer.style.display = "block";
+                    }
+                });
+            });
         });
-    });
-});
 
     </script>
 
-   <!-- Footer Section Begin -->
-   <footer class="footer-section">
-    <div class="container">
-        <div class="row">
-            <div class="col-lg-3 col-md-6 col-sm-6">
-                <div class="fs-widget">
-                    <h5>About Me</h5>
-                    <p>Hi! I'm Shushant, a 18-year-old UI/UX designer, photographer, and web developer. For the past three years, I've been taking photos around Kathmandu and working on design and coding. Explore my world where creativity and technology come together!</p>
+    <!-- Footer Section Begin -->
+    <footer class="footer-section">
+        <div class="container">
+            <div class="row">
+                <div class="col-lg-3 col-md-6 col-sm-6">
+                    <div class="fs-widget">
+                        <h5>About Me</h5>
+                        <p>Hi! I'm Shushant, a 18-year-old UI/UX designer, photographer, and web developer. For the past
+                            three years, I've been taking photos around Kathmandu and working on design and coding.
+                            Explore my world where creativity and technology come together!</p>
 
-                </div>
-            </div>
-            <div class="col-lg-3 col-md-6 col-sm-6">
-                <div class="fs-widget">
-                    <h5>Instagram</h5>
-                    <div class="fw-instagram">
-                        <a href="https://www.instagram.com/shushant.giri/"><img src="img/instragram1.jpeg" alt=""
-                                class="img"> </a>
-                        <a href="https://www.instagram.com/shushant.giri/"> <img src="img/instragram2.jpeg" alt=""
-                                class="img"> </a>
-                        <a href="https://www.instagram.com/shushant.giri/"> <img src="img/instragram3.jpg" alt=""
-                                class="img"></a>
                     </div>
                 </div>
-            </div>
-            <div class="col-lg-3 col-md-6 col-sm-6">
-                <div class="fs-widget">
-                    <h5>Quick links</h5>
-                    <ul>
-                        <li><a href="/index.html">Home</a></li>
-                        <!-- <li><a href="/about.html">About</a></li> -->
-                        <li><a href="/contact.html">Contact</a></li>
-                        <li><a href="/about.html">About</a></li>                      
-
-                    </ul>
-                    <ul>
-                        <li><a href="https://designer.girisushant.com.np/" target="_blank">Design Works</a></li>
-                        <li><a href="/faq.html">FAQ</a></li>
-                         <li><a href="/coming.html">What's Next</a></li>
-                    </ul>
-                </div>
-            </div>
-            <div class="col-lg-3 col-md-6 col-sm-6">
-                <div class="fs-widget">
-                    <h5>Have a question?</h5>
-                    <div class="contact-info">
-                        <p><i class="fa fa-map-marker"></i> : Kathmandu, Nepal</p>
-                        <p><i class="fa fa-phone"></i> +977 9810958014</p>
-                        <p><i class="fa fa-envelope"></i>  info@girisushant.com.np</p>
+                <div class="col-lg-3 col-md-6 col-sm-6">
+                    <div class="fs-widget">
+                        <h5>Instagram</h5>
+                        <div class="fw-instagram">
+                            <a href="https://www.instagram.com/shushant.giri/"><img src="img/instragram1.jpeg" alt=""
+                                    class="img"> </a>
+                            <a href="https://www.instagram.com/shushant.giri/"> <img src="img/instragram2.jpeg" alt=""
+                                    class="img"> </a>
+                            <a href="https://www.instagram.com/shushant.giri/"> <img src="img/instragram3.jpg" alt=""
+                                    class="img"></a>
+                        </div>
                     </div>
                 </div>
-            </div>
+                <div class="col-lg-3 col-md-6 col-sm-6">
+                    <div class="fs-widget">
+                        <h5>Quick links</h5>
+                        <ul>
+                            <li><a href="/index.html">Home</a></li>
+                            <!-- <li><a href="/about.html">About</a></li> -->
+                            <li><a href="/contact.html">Contact</a></li>
+                            <li><a href="/about.html">About</a></li>
 
-            
-            <div class="col-lg-12">
-                <div class="copyright-text">
-                    <p>
-                        <!-- Link back to Colorlib can't be removed. Template is licensed under CC BY 3.0. -->
-                        Copyright &copy;
-                        <script>document.write(new Date().getFullYear());</script> All rights reserved |<a
-                            href="">Shushant
-                            Photography</a>
-                        <!-- Link back to Colorlib can't be removed. Template is licensed under CC BY 3.0. -->
-                    </p>
+                        </ul>
+                        <ul>
+                            <li><a href="https://designer.girisushant.com.np/" target="_blank">Design Works</a></li>
+                            <li><a href="/faq.html">FAQ</a></li>
+                            <li><a href="/coming.html">What's Next</a></li>
+                        </ul>
+                    </div>
+                </div>
+                <div class="col-lg-3 col-md-6 col-sm-6">
+                    <div class="fs-widget">
+                        <h5>Have a question?</h5>
+                        <div class="contact-info">
+                            <p><i class="fa fa-map-marker"></i> : Kathmandu, Nepal</p>
+                            <p><i class="fa fa-phone"></i> +977 9810958014</p>
+                            <p><i class="fa fa-envelope"></i> info@girisushant.com.np</p>
+                        </div>
+                    </div>
+                </div>
+
+
+                <div class="col-lg-12">
+                    <footer class="footer-copyright">
+                        <p>
+                            &copy; <span id="current-year"></span>Copyright All Rights Reserved |
+                            <span class="shushant-name">Shushant Giri</span>
+                        </p>
+                    </footer>
                 </div>
             </div>
         </div>
+        <script>
+            document.getElementById('current-year').textContent = new Date().getFullYear();
+        </script>
+    </footer>
+    <!-- Footer Section End -->
+
+    <!-- Suggestion Popup -->
+    <div id="suggestion-box">
+        <div class="suggestion-header">
+            👋 Have any suggestions?
+            <span onclick="closeSuggestion()" class="close-btn">&times;</span>
+        </div>
+        <form id="suggestion-form" onsubmit="return submitSuggestion(event)">
+            <div id="error-msg" style="color: #dc3545; font-size: 13px; margin-bottom: 6px; display: none;"></div>
+            <div id="error-msg" style="color: #dc3545; font-size: 13px; margin-top: 4px; display: none;"></div>
+            <textarea name="suggestion" id="suggestion-text" placeholder="Let us know how we can improve..."
+                required></textarea>
+            <button type="submit" id="submit-btn">Submit</button>
+        </form>
     </div>
-</footer>
-<!-- Footer Section End -->
-    
-<!-- Suggestion Popup -->
-<div id="suggestion-box">
-  <div class="suggestion-header">
-    👋 Have any suggestions?
-    <span onclick="closeSuggestion()" class="close-btn">&times;</span>
-  </div>
-  <form id="suggestion-form" onsubmit="return submitSuggestion(event)">
-    <div id="error-msg" style="color: #dc3545; font-size: 13px; margin-bottom: 6px; display: none;"></div><div id="error-msg" style="color: #dc3545; font-size: 13px; margin-top: 4px; display: none;"></div>
-    <textarea name="suggestion" id="suggestion-text" placeholder="Let us know how we can improve..." required></textarea>
-    <button type="submit" id="submit-btn">Submit</button>
-  </form>
-</div>
 
-<script>
-  function closeSuggestion() {
-    const textarea = document.getElementById('suggestion-text');
-    const button = document.getElementById('submit-btn');
-    const errorMsg = document.getElementById('error-msg');
+    <script>
+        function closeSuggestion() {
+            const textarea = document.getElementById('suggestion-text');
+            const button = document.getElementById('submit-btn');
+            const errorMsg = document.getElementById('error-msg');
 
-    textarea.placeholder = "Let us know how we can improve...";
-    textarea.style.borderColor = "#ddd";
-    textarea.style.color = "#000";
-    textarea.value = '';
+            textarea.placeholder = "Let us know how we can improve...";
+            textarea.style.borderColor = "#ddd";
+            textarea.style.color = "#000";
+            textarea.value = '';
 
-    button.textContent = "Submit";
-    button.style.backgroundColor = "#007bff";
-    button.style.cursor = "pointer";
-    button.disabled = false;
+            button.textContent = "Submit";
+            button.style.backgroundColor = "#007bff";
+            button.style.cursor = "pointer";
+            button.disabled = false;
 
-    errorMsg.style.display = 'none';
-    errorMsg.textContent = '';
+            errorMsg.style.display = 'none';
+            errorMsg.textContent = '';
 
-    document.getElementById('suggestion-box').style.display = 'none';
-  }
+            document.getElementById('suggestion-box').style.display = 'none';
+        }
 
-  function submitSuggestion(event) {
-    event.preventDefault();
+        function submitSuggestion(event) {
+            event.preventDefault();
 
-    const textarea = document.getElementById('suggestion-text');
-    const feedback = textarea.value.trim();
-    const button = document.getElementById('submit-btn');
-    const errorMsg = document.getElementById('error-msg');
+            const textarea = document.getElementById('suggestion-text');
+            const feedback = textarea.value.trim();
+            const button = document.getElementById('submit-btn');
+            const errorMsg = document.getElementById('error-msg');
 
-    if (!feedback) {
-      errorMsg.textContent = "Please enter your suggestion before submitting.";
-      errorMsg.style.display = 'block';
+            if (!feedback) {
+                errorMsg.textContent = "Please enter your suggestion before submitting.";
+                errorMsg.style.display = 'block';
 
-      textarea.style.borderColor = "#dc3545"; // red border
-      return false;
-    }
+                textarea.style.borderColor = "#dc3545"; // red border
+                return false;
+            }
 
-    // Clear error on valid input
-    errorMsg.style.display = 'none';
-    errorMsg.textContent = '';
-    textarea.style.borderColor = "#ddd";
+            // Clear error on valid input
+            errorMsg.style.display = 'none';
+            errorMsg.textContent = '';
+            textarea.style.borderColor = "#ddd";
 
-    button.disabled = true;
-    button.textContent = "Submitting...";
+            button.disabled = true;
+            button.textContent = "Submitting...";
 
-    // Simulate network delay
-    setTimeout(() => {
-      textarea.value = '';
-      textarea.placeholder = "Thank you! Your suggestion has been sent.";
-      textarea.style.borderColor = "#28a745"; // green border
-      textarea.style.color = "#000";
+            // Simulate network delay
+            setTimeout(() => {
+                textarea.value = '';
+                textarea.placeholder = "Thank you! Your suggestion has been sent.";
+                textarea.style.borderColor = "#28a745"; // green border
+                textarea.style.color = "#000";
 
-      button.textContent = "Submitted";
-      button.style.backgroundColor = "#28a745"; // green button
-      button.style.cursor = "default";
-      button.disabled = true;
-    }, 1500);
+                button.textContent = "Submitted";
+                button.style.backgroundColor = "#28a745"; // green button
+                button.style.cursor = "default";
+                button.disabled = true;
+            }, 1500);
 
-    return false;
-  }
-</script>
+            return false;
+        }
+    </script>
 
 
 
